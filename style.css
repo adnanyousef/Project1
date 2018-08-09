@@ -45,9 +45,10 @@ p {
 }
 
 #submit {
-    font-size: 2.25rem;
+    font-size: 1.75rem;
 }
 
 footer.page-footer {
   margin: 0;
+  border-top: .5px solid grey;
 }
