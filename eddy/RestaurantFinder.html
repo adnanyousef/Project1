@@ -1,117 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Restaurants in ATX</title>
+  <title>ATX Night Out</title>
 
   <!-- Google Places -->
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeXMSNP-ICspqucRDK8pgiJlNInjVJmio&libraries=places"></script>
-  
+
   <!-- jQuery -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-
-  <script>
-
-  var map;
-  var infowindow;
-
-  var request;
-  var service;
-  var markers = [];
-
-  function initialize() {
-    var center = new google.maps.LatLng(30.2918043, -97.7909014);
-    map = new google.maps.Map(document.getElementById('map'), {
-      center: center,
-      zoom: 13
-    });
-
-    request = {
-      location: center,
-      radius: 8047, // meters, equivalent to 5 miles
-      types: ['restaurant']
-    };
-    infowindow = new google.maps.InfoWindow();
-
-    service = new google.maps.places.PlacesService(map);
-
-    service.nearbySearch(request, callback);
-
-    google.maps.event.addListener(map, 'rightclick', function(event){
-      map.setCenter(event.latLng);
-      clearResults(markers);
-
-      var request = {
-        location: event.latLng,
-        radius: 8047,
-        types: ['restaurant']
-      };
-      service.nearbySearch(request, callback);
-    })
-
-
-
-  };
-
-  function callback(results,status) {
-    if (status == google.maps.places.PlacesServiceStatus.OK) {
-      for (var i=0; i < results.length; i++) {
-        markers.push(createMarker(results[i]));
-      };
-    };
-  };
-
-  function createMarker(place) {
-    var placeLoc = place.geometry.location;
-    var marker = new google.maps.Marker({
-      map: map,
-      position: place.geometry.location
-    });
-
-    google.maps.event.addListener(marker, 'click', function() {
-      infowindow.setContent(place.name);
-      infowindow.open(map, this);
-    });
-    return marker;
-  };
-
-  function clearResults(markers) {
-    for (var m in markers) {
-      markers[m].setMap(null);
+  <style>
+    html, body, #map {
+      height: 100%;
+      margin: 0px;
+      padding: 0px;
     }
-    markers = [];
-  }
-
-  google.maps.event.addDomListener(window, 'load', initialize);
-  
-  
-  
-  </script>
-
-
-
-
-<style>
-
-  html, body, #map {
-    height: 100%;
-    margin: 0px;
-    padding: 0px;
-  }
-
-</style>
+  </style>
 
 </head>
+
 <body>
 
-  <h1>Google Places API restaurant finder</h1>
-  <h4>Displays restaurants in downtown Austin. You can scroll
-  around in the map and right click anywhere to render a new 
-  list of restaurants within a 5 mile radius of your right click.</h4>
+  <h1>Google Places API</h1>
+  <h4>
+    Currently searching for:
+    <span id="query"></span>
+  </h4>
+  <p>
+    Search for:
+    <button id="restaurant-button" value="restaurant">Restaurants</button>
+    <button id="bar-button" value="bar">Bars</button>
+    <button id="cafe-button" value="cafe">Cafes</button>
+    <button id="park-button" value="park">Parks</button>
+    <button id="liquor-store-button" value="liquor_store">Liquor Store</button>
+    <button id="gas-station-button" value="gas_station">Gas Station</button>
+  </p>
+
+  <div id="saved-stuff"></div>
 
   <div id="map"></div>
 
+  <script src="js/map.js"></script>
+
 </body>
+
 </html>
