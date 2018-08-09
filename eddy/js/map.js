@@ -10,6 +10,17 @@ var markers = [];
 var lat = 0;
 var lng = 0;
 
+var address;
+var address1;
+var address2;
+var address3;
+
+var index = 1;
+
+
+var addressArray = [];
+var numberOfWaypoints = 3;
+
 var radius = 8047 // in meters
 
 // Get current location
@@ -69,7 +80,11 @@ function createMarker(place) {
   });
 
   google.maps.event.addListener(marker, 'click', function () {
-    infowindow.setContent(place.name);
+    address = place.vicinity;
+    infowindow.setContent(place.name + "<br>" + place.vicinity + "<br><button onclick='nextWaypoint()' attr=" + address + ">Select me!<button>");
+    
+    console.log(address);
+
     infowindow.open(map, this);
   });
   return marker;
@@ -86,6 +101,36 @@ google.maps.event.addDomListener(window, 'load', function () {
   initialize(userSelection);
 });
 
+
+for (var i=0; i < numberOfWaypoints; i++) {
+  
+}
+
+
+// Choose next waypoint
+function nextWaypoint() {
+
+  if (index === 1) {
+    addressArray[0] = address;
+    console.log(addressArray);
+    $("#saved-stuff").append("<p>First destination: " + address + "</p>");
+    alert("Click another category!");
+  } else if (index === 2) {
+    addressArray[1] = address;
+    console.log(addressArray);
+    $("#saved-stuff").append("<p>Second destination: " + address + "</p>");
+    alert("Click another category!");
+  } else if (index === 3) {
+    addressArray[2] = address;
+    console.log(addressArray);
+    $("#saved-stuff").append("<p>Third destination: " + address + "</p>");
+    alert("Click another category!");
+  };
+
+  // else if index=4, get route
+  index++;
+
+};
 
 
 // Search for what?
