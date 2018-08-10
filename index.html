@@ -12,6 +12,10 @@
     <!-- CSS  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+        crossorigin="anonymous">
+
     <link href="style.css" type="text/css" rel="stylesheet" media="screen,projection" />
 </head>
 
@@ -90,7 +94,8 @@
                         </h2>
                         <h5 class="center">lorem ipsum</h5>
 
-                        <p class="light">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto voluptate aperiam delectus iste modi accusantium asperiores ullam sapiente Eius expedita.</p>
+                        <p class="light">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto voluptate aperiam delectus iste
+                            modi accusantium asperiores ullam sapiente Eius expedita.</p>
                     </div>
                 </div>
 
@@ -101,7 +106,8 @@
                         </h2>
                         <h5 class="center">lorem ipsum</h5>
 
-                        <p class="light">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto voluptate aperiam delectus iste modi accusantium asperiores ullam sapiente Eius expedita.</p>
+                        <p class="light">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto voluptate aperiam delectus iste
+                            modi accusantium asperiores ullam sapiente Eius expedita.</p>
                     </div>
                 </div>
             </div>
@@ -130,7 +136,7 @@
                     <h4>
                         <i class="mdi-content-send brown-text"></i>
                     </h4>
-                   
+
                     <div class="center-align light">
                         <div class="input-field col s12" id="section2">
 
@@ -139,15 +145,41 @@
 
                             <!-- Dropdown Structure -->
                             <ul id='dropdown1' class='dropdown-content'>
-                                <li><a href="#!"><button id="restaurant-button" class="select" value="restaurant">Restaurants</button></a></li>
+                                <li>
+                                    <a href="#!">
+                                        <button id="restaurant-button" class="select" value="restaurant">Restaurants</button>
+                                    </a>
+                                </li>
                                 <li class="divider" tabindex="-1"></li>
-                                <li><a href="#!"><button id="cafe-button" class="select"  value="cafe">Cafes</button></a></li>
+                                <li>
+                                    <a href="#!">
+                                        <button id="bar-button" class="select" value="bar">Bars</button>
+                                    </a>
+                                </li>
+                                <li class="divider" tabindex- "-1"></li>
+                                <li>
+                                    <a href="#!">
+                                        <button id="cafe-button" class="select" value="cafe">Cafes</button>
+                                    </a>
+                                </li>
                                 <li class="divider" tabindex="-1"></li>
-                                <li><a href="#!"><button id="park-button" class="select"  value="park">Parks</button></a></li>
+                                <li>
+                                    <a href="#!">
+                                        <button id="park-button" class="select" value="park">Parks</button>
+                                    </a>
+                                </li>
                                 <li class="divider" tabindex="-1"></li>
-                                <li><a href="#!"><button id="liquor-store-button" class="select"  value="liquor_store">Liquor Store</button></a></li>
+                                <li>
+                                    <a href="#!">
+                                        <button id="liquor-store-button" class="select" value="liquor_store">Liquor Store</button>
+                                    </a>
+                                </li>
                                 <li class="divider" tabindex="-1"></li>
-                                <li><a href="#!"><button id="gas-station-button" class="select"  value="gas_station">Gas Station</button></a></li>
+                                <li>
+                                    <a href="#!">
+                                        <button id="gas-station-button" class="select" value="gas_station">Gas Station</button>
+                                    </a>
+                                </li>
                                 <li class="divider" tabindex="-1"></li>
                             </ul>
                         </div>
@@ -159,7 +191,28 @@
     </div>
 
     <div id="map"></div>
- 
+
+    <div class="container">
+        <div class="section">
+
+            <!--   Icon Section   -->
+            <div class="row">
+                <div class="col s12 m4 center">
+                    <div id="saved-stuff1"></div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div id="saved-stuff2"></div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div id="saved-stuff3"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
     <footer class="page-footer black">
         <div class="footer">
             <div class="container center-align">
@@ -168,6 +221,8 @@
         </div>
     </footer>
 
+
+    <!---Scripts-->
     <!-- Google Places -->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeXMSNP-ICspqucRDK8pgiJlNInjVJmio&libraries=places"></script>
 
