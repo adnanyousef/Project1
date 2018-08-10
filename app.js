@@ -1,11 +1,34 @@
 //---layout display--- 
-(function ($) {
-  $(function () {
+(function($){
+    $(function(){
+  
+      $('.sidenav').sidenav();
+      $('.parallax').parallax();
+  
+    }); 
+  })(jQuery); 
 
-    $('.sidenav').sidenav();
-    $('.parallax').parallax();
+  //------drop down selection--------
+  $(".dropdown-trigger").dropdown();
 
+
+  //--------scroll animation-------
+  $(document).ready(function(){
+    $("a").on('click', function(event) {
+        event.preventDefault()
+        var hash = this.hash;
+
+        if($(hash).offset()) {
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 800, function(){
+          });
+        }
+    });
   });
+
+       
+=======
 })(jQuery);
 
 //------drop down selection--------
@@ -25,7 +48,7 @@ $(document).ready(function () {
   });
 });
 
-//-------map functionality---------
+
 var userSelection = "restaurant";
 
 var test = {};

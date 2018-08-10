@@ -47,7 +47,10 @@ p {
 .toMap {
     font-size: 1.5rem;
     margin-top: 25px;
-    border-bottom: 2px solid #ffffff
+    border-bottom: .5px solid #ffffff;
+    padding: 7px;
+    position: relative;
+    top: 40px;
 }
 
 footer.page-footer {
@@ -84,3 +87,10 @@ footer.page-footer {
   padding: 0px;
    border-style: solid;
 }
+
+#location{
+  color: #ffffff;
+  font-size: 1.rem;
+  position: absolute;
+}
+
