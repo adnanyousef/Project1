@@ -219,17 +219,17 @@ function nextWaypoint() {
   if (index === 0) {
     // addressArray[0] = address;
     getAttributes();
-    $("#saved-stuff1").append("<p>First destination: " + name + "<br>" + address + "<br>" + "Price: " + price + "<img src='" + photo + "'>" + "</p>");
+    $("#saved-stuff1").attr("class", "results").append("<p>First destination: " + name + "<br>" + address + "<br>" + "Price: " + price + "<img src='" + photo + "'>" + "</p>");
     console.log("Chose first destination: " + nameArray[index]);
   } else if (index === 1) {
     // addressArray[1] = address;
     getAttributes();
-    $("#saved-stuff2").append("<p>Second destination: " + address + "</p>");
+    $("#saved-stuff2").attr("class", "results").append("<p>Second destination: " + name + "<br>" + address + "<br>" + "Price: " + price + "<img src='" + photo + "'>" + "</p>");
     console.log("Chose second destination: " + nameArray[index]);
   } else if (index === 2) {
     // addressArray[2] = address;
     getAttributes();
-    $("#saved-stuff3").append("<p>Third destination: " + address + "</p>");
+    $("#saved-stuff3").attr("class", "results").append("<p>Third destination: " + name + "<br>" + address + "<br>" + "Price: " + price + "<img src='" + photo + "'>" + "</p>");
     console.log("Chose third destination: " + nameArray[index]);
     // GET ROUTE
   };
