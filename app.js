@@ -101,7 +101,7 @@ function initialize(searchCategory) {
 
   service.nearbySearch(request, callback);
 
-  google.maps.event.addListener(map, 'rightclick', function (event) {
+  google.maps.event.addListener(markers, 'click', function (event) {
     map.setCenter(event.latLng);
     clearResults(markers);
 
