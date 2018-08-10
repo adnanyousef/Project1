@@ -27,6 +27,10 @@
     });
   });
 
+  //----text input line------
+  $('#textarea1').val('New Text');
+  M.textareaAutoResize($('#textarea1'));
+       
 //-------map functionality---------
 var userSelection = "restaurant";
 
