@@ -44,11 +44,43 @@ p {
   font-size: inherit;
 }
 
-#submit {
-    font-size: 1.75rem;
+.toMap {
+    font-size: 1.5rem;
+    margin-top: 25px;
+    border-bottom: 2px solid #ffffff
 }
 
 footer.page-footer {
   margin: 0;
   border-top: .5px solid grey;
 }
+
+/* map display */
+#map {
+  height: 500px;
+  width: 90%;
+  margin: auto;
+  margin-bottom: 45px;
+}
+
+/* drop down map buttons*/
+.dropdown-trigger{
+  width: 35%;
+}
+
+.select {
+  width: 100%;
+  padding: 1rem;
+  background-color: #d32f2f;
+  color:#ffffff;
+}
+
+.dropdown-content li>a, .dropdown-content li>span {
+  padding:0;
+}
+
+#saved-stuff1 {
+  border: 2px solid black;
+  padding: 10px;
+}
+  
