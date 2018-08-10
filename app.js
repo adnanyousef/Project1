@@ -14,9 +14,10 @@ $(".dropdown-trigger").dropdown();
 
 //--------scroll animation-------
 $(document).ready(function () {
-  $("a").on('click', function (event) {
+  $(".categories").on('click', function (event) {
     event.preventDefault()
     var hash = this.hash;
+    console.log(hash);
 
     $('html, body').animate({
       scrollTop: $(hash).offset().top
@@ -287,4 +288,8 @@ function runRoute() {
   
   var routeURL = "https://www.google.com/maps/dir/?api=1&origin=+" + pseudostart + "+Austin+TX&destination=" + pseudoend + "+Austin+TX&travelmode=bicycling&waypoints=" + pseudowaypoint;
     console.log(routeURL);
-  };
+    console.log("--------")
+    document.getElementById("open-route-link").setAttribute("href", routeURL);
+    console.log($("#open-route-link"));
+
+};
