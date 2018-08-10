@@ -1,29 +1,28 @@
 //---layout display--- 
-(function($){
-    $(function(){
-  
-      $('.sidenav').sidenav();
-      $('.parallax').parallax();
-  
-    }); 
-  })(jQuery); 
+(function ($) {
+  $(function () {
 
-  //------drop down selection--------
-  $(".dropdown-trigger").dropdown();
+    $('.sidenav').sidenav();
+    $('.parallax').parallax();
 
-
-  //--------scroll animation-------
-  $(document).ready(function(){
-    $("a").on('click', function(event) {
-        event.preventDefault()
-        var hash = this.hash;
-
-        $('html, body').animate({
-          scrollTop: $(hash).offset().top
-        }, 800, function(){
-      });
-    });
   });
+})(jQuery);
+
+//------drop down selection--------
+$(".dropdown-trigger").dropdown();
+
+
+//--------scroll animation-------
+$(document).ready(function () {
+  $("a").on('click', function (event) {
+    event.preventDefault()
+    var hash = this.hash;
+
+    $('html, body').animate({
+      scrollTop: $(hash).offset().top
+    }, 800, function () {});
+  });
+});
 
 //-------map functionality---------
 var userSelection = "restaurant";
@@ -37,8 +36,9 @@ var request;
 var service;
 var markers = [];
 
-var lat = 0;
-var lng = 0;
+var lat = 30.26715;
+var lng = -97.74306;
+var userLocation = '';
 
 var address
 var name;
@@ -51,7 +51,7 @@ var addressArray = [];
 var nameArray = [];
 var idArray = [];
 var websiteArray = []; // Haven't figured out yet
-var priceArray = []; 
+var priceArray = [];
 var ratingArray = [];
 var photosArray = [];
 
@@ -61,11 +61,32 @@ var index = 0;
 
 var radius = 8047 // in meters
 
+
 // Get current location
-navigator.geolocation.getCurrentPosition(function(position) {
-  lat = position.coords.latitude;
-  lng = position.coords.longitude;
-});
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(function (position) {
+    lat = position.coords.latitude;
+    lng = position.coords.longitude;
+    console.log("Got user location: " + lat + ", " + lng);
+    initialize(userSelection);
+  }, function () {
+    // User doesn't want to share current location
+    userLocation = $("#location-input").val();
+    // Hardcode to ATX for now
+    lat = 30.26715;
+    lng = -97.74306;
+    console.log("User denies location access. Hardcoding to ATX for now...");
+    initialize(userSelection);
+  });
+} else {
+  // Browser doesn't support GeoLocation
+  userLocation = $("#location-input").val();
+  // Hardcode to ATX for now
+  lat = 30.26715;
+  lng = -97.74306;
+  initialize(userSelection);
+  console.log("Browser doesn't support location services... Tell user to upgrade!");
+};
 
 function initialize(searchCategory) {
   var center = new google.maps.LatLng(lat, lng);
@@ -85,7 +106,7 @@ function initialize(searchCategory) {
 
   service.nearbySearch(request, callback);
 
-  google.maps.event.addListener(map, 'rightclick', function (event) {
+  google.maps.event.addListener(markers, 'click', function (event) {
     map.setCenter(event.latLng);
     clearResults(markers);
 
@@ -96,8 +117,9 @@ function initialize(searchCategory) {
     };
     service.nearbySearch(request, callback);
   })
-
 };
+
+
 
 function callback(results, status) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
@@ -165,7 +187,10 @@ function createMarker(place) {
     if (place.photos == undefined) {
       photo = place.icon;
     } else {
-      photo = place.photos[0].getUrl({'maxWidth': 300, 'maxHeight': 300});
+      photo = place.photos[0].getUrl({
+        'maxWidth': 300,
+        'maxHeight': 300
+      });
     };
 
     // Set button text
@@ -179,13 +204,13 @@ function createMarker(place) {
       var stop = "next";
     };
 
-    var html = 
+    var html =
       `<center><div style="overflow: auto;">${name}<br>` +
       `${address}<br>` +
       `Price: ${price}<br>` +
       `Rating: ${rating}<br>` +
       `<img src="${photo}"><br>` +
-      `<button onclick='nextWaypoint()'>Select ${stop} stop</button></div></center>`;
+      `<button class="user-choice" onclick='nextWaypoint()'>Select ${stop} stop</button></div></center>`;
 
     infowindow.setContent(html);
 
@@ -253,5 +278,8 @@ $(document).on("click", "button", function (event) {
   initialize(userSelection);
 });
 
+
+console.log(lat, lng)
 // selected trips section
 // $("#saved-stuff").hide()
+
