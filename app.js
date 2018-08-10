@@ -37,8 +37,8 @@ var request;
 var service;
 var markers = [];
 
-var lat = 0;
-var lng = 0;
+var lat = 30.26715;
+var lng = -97.74306;
 
 var address
 var name;
@@ -61,10 +61,12 @@ var index = 0;
 
 var radius = 8047 // in meters
 
+
 // Get current location
 navigator.geolocation.getCurrentPosition(function(position) {
   lat = position.coords.latitude;
   lng = position.coords.longitude;
+  initialize(userSelection);
 });
 
 function initialize(searchCategory) {
@@ -96,8 +98,9 @@ function initialize(searchCategory) {
     };
     service.nearbySearch(request, callback);
   })
-
 };
+
+
 
 function callback(results, status) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
@@ -253,5 +256,7 @@ $(document).on("click", "button", function (event) {
   initialize(userSelection);
 });
 
+
+console.log(lat, lng)
 // selected trips section
 // $("#saved-stuff").hide()
