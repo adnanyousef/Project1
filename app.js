@@ -18,10 +18,12 @@
         event.preventDefault()
         var hash = this.hash;
 
-        $('html, body').animate({
-          scrollTop: $(hash).offset().top
-        }, 800, function(){
-      });
+        if($(hash).offset()) {
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 800, function(){
+          });
+        }
     });
   });
 
