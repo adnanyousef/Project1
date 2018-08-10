@@ -26,8 +26,29 @@
         }
     });
   });
+
        
-//-------map functionality---------
+=======
+})(jQuery);
+
+//------drop down selection--------
+$(".dropdown-trigger").dropdown();
+
+
+//--------scroll animation-------
+$(document).ready(function () {
+  $(".categories").on('click', function (event) {
+    event.preventDefault()
+    var hash = this.hash;
+    console.log(hash);
+
+    $('html, body').animate({
+      scrollTop: $(hash).offset().top
+    }, 800, function () {});
+  });
+});
+
+
 var userSelection = "restaurant";
 
 var test = {};
@@ -253,7 +274,7 @@ function nextWaypoint() {
     getAttributes();
     $("#saved-stuff3").attr("class", "results").append("<p>Third destination: " + name + "<br>" + address + "<br>" + "Price: " + price + "<img src='" + photo + "'>" + "</p>");
     console.log("Chose third destination: " + nameArray[index]);
-    // GET ROUTE
+    runRoute();
   };
   // else if index=3, get route
   index++;
@@ -282,7 +303,16 @@ $(document).on("click", "button", function (event) {
 });
 
 
-console.log(lat, lng)
-// selected trips section
-// $("#saved-stuff").hide()
+function runRoute() {
+  var pseudostart = nameArray[0].replace(/ /g, "+") + addressArray[0].replace(/ /g, "+");
+  var pseudoend = nameArray[2].replace(/ /g, "+") + addressArray[2].replace(/ /g, "+");
+  var pseudowaypoint = nameArray[1].replace(/ /g, "+") + addressArray[1].replace(/ /g, "+");
+  var url = "https://www.google.com/maps/dir/?api=1&origin=+Home+Slice+Austin+TX&destination=Thompson+Conference+Center+Austin+TX&travelmode=bicycling&waypoints=Emo's+Austin+TX";
+  
+  var routeURL = "https://www.google.com/maps/dir/?api=1&origin=+" + pseudostart + "+Austin+TX&destination=" + pseudoend + "+Austin+TX&travelmode=bicycling&waypoints=" + pseudowaypoint;
+    console.log(routeURL);
+    console.log("--------")
+    document.getElementById("open-route-link").setAttribute("href", routeURL);
+    console.log($("#open-route-link"));
 
+};
