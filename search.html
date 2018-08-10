@@ -10,9 +10,6 @@
 
     <!-- CSS  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
-    <!-- Google Places -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeXMSNP-ICspqucRDK8pgiJlNInjVJmio&libraries=places"></script>
 
     <link href="style.css" type="text/css" rel="stylesheet" media="screen,projection" />
       
@@ -23,16 +20,16 @@
     
         <h1>Google Places API</h1>
         <h4>
-          Currently category searching for: <span id="query"></span>.
+          Currently category searching for: <span id="query"></span>
         </h4>
 
     
 
            <!-- Dropdown Trigger -->
-            <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Drop Me!</a>
+            <!-- <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Drop Me!</a> -->
 
             <!-- Dropdown Structure -->
-            <ul id='dropdown1' class='dropdown-content'>
+            <!-- <ul id='dropdown1' class='dropdown-content'>
                 <li><a href="#!"><button id="restaurant-button" value="restaurant">Restaurants</button></a></li>
                 <li class="divider" tabindex="-1"></li>
                 <li><a href="#!"><button id="cafe-button" value="cafe">Cafes</button></a></li>
@@ -44,14 +41,15 @@
                 <li><a href="#!"><button id="gas-station-button" value="gas_station">Gas Station</button></a></li>
                 <li class="divider" tabindex="-1"></li>
             </ul>
-                    
+            <button id="gas-station-button" value="gas_station">Gas Station</button>
             <div class="row">
                 <div class="col s6 offset-s6"><span class="flow-text"> <div id="map"></div></span></div>
-            </div>
+            </div> -->
     
         
        
-    
+    <!-- Google Places -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeXMSNP-ICspqucRDK8pgiJlNInjVJmio&libraries=places"></script>
 
     <!-- Firebase Reference -->
     <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>

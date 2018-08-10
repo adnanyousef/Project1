@@ -1,3 +1,4 @@
+//---layout display--- 
 (function($){
     $(function(){
   
@@ -7,7 +8,7 @@
     }); 
   })(jQuery); 
   
-  //----Eddy finder---
+  //----map finder---
 
   var userSelection = "restaurant";
   var map;
@@ -69,8 +70,8 @@
   google.maps.event.addDomListener(window, 'load', function() {
     initialize(userSelection);
   });
-  
-  // Search for what?
+
+  //----button searches-------
   $(document).on("click", "button", function(event){
     event.preventDefault();
     userSelection = $(this).val();
@@ -79,8 +80,19 @@
     initialize(userSelection);
   });
 
-  // drop down search 
-  $('.dropdown-trigger').dropdown();
+  //------drop down search--------
+  $(".dropdown-trigger").dropdown();
 
-  
-        
+
+  //--------scroll animation-------
+  $(document).ready(function(){
+    $("a").on('click', function(event) {
+        event.preventDefault()
+        var hash = this.hash;
+
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 800, function(){
+      });
+    });
+  });
