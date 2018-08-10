@@ -58,7 +58,6 @@ footer.page-footer {
   border-top: .5px solid grey;
 }
 
-/* map display */
 #map {
   height: 500px;
   width: 90%;
@@ -66,7 +65,6 @@ footer.page-footer {
   margin-bottom: 45px;
 }
 
-/* drop down map buttons*/
 .dropdown-trigger{
   width: 35%;
 }
@@ -90,7 +88,15 @@ footer.page-footer {
 
 #location{
   color: #ffffff;
-  font-size: 1.rem;
-  position: absolute;
+  font-size: 1.35rem;
 }
 
+#locationInput {
+  color: #ffffff;
+  font-size: 1.35rem;
+}
+
+.row .input-field input:focus {
+  border-bottom: 1px solid #ffffff !important;
+  box-shadow: 0 1px 0 0 #ffffff !important;
+}
