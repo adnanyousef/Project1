@@ -67,6 +67,7 @@ if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(function (position) {
     lat = position.coords.latitude;
     lng = position.coords.longitude;
+    console.log("Got user location: " + lat + ", " + lng);
     initialize(userSelection);
   }, function () {
     // User doesn't want to share current location
@@ -74,6 +75,8 @@ if (navigator.geolocation) {
     // Hardcode to ATX for now
     lat = 30.26715;
     lng = -97.74306;
+    console.log("User denies location access. Hardcoding to ATX for now...");
+    initialize(userSelection);
   });
 } else {
   // Browser doesn't support GeoLocation
@@ -81,6 +84,8 @@ if (navigator.geolocation) {
   // Hardcode to ATX for now
   lat = 30.26715;
   lng = -97.74306;
+  initialize(userSelection);
+  console.log("Browser doesn't support location services... Tell user to upgrade!");
 };
 
 function initialize(searchCategory) {
