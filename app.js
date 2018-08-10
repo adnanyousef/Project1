@@ -14,7 +14,7 @@
 
   //--------scroll animation-------
   $(document).ready(function(){
-    $(".categories").on('click', function(event) {
+    $("#searchButton").on('click', function(event) {
         event.preventDefault()
         var hash = this.hash;
 
@@ -29,21 +29,6 @@
 
 //------drop down selection--------
 $(".dropdown-trigger").dropdown();
-
-
-//--------scroll animation-------
-$(document).ready(function () {
-  $(".categories").on('click', function (event) {
-    event.preventDefault()
-    var hash = this.hash;
-    console.log(hash);
-
-    $('html, body').animate({
-      scrollTop: $(hash).offset().top
-    }, 800, function () {});
-  });
-});
-
 
 var userSelection = "restaurant";
 
