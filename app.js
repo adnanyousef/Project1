@@ -205,7 +205,7 @@ function createMarker(place) {
       `Price: ${price}<br>` +
       `Rating: ${rating}<br>` +
       `<img src="${photo}"><br>` +
-      `<button onclick='nextWaypoint()'>Select ${stop} stop</button></div></center>`;
+      `<button class="user-choiceonclick='nextWaypoint()'>Select ${stop} stop</button></div></center>`;
 
     infowindow.setContent(html);
 
@@ -277,3 +277,4 @@ $(document).on("click", "button", function (event) {
 console.log(lat, lng)
 // selected trips section
 // $("#saved-stuff").hide()
+
