@@ -1,29 +1,28 @@
 //---layout display--- 
-(function($){
-    $(function(){
-  
-      $('.sidenav').sidenav();
-      $('.parallax').parallax();
-  
-    }); 
-  })(jQuery); 
+(function ($) {
+  $(function () {
 
-  //------drop down selection--------
-  $(".dropdown-trigger").dropdown();
+    $('.sidenav').sidenav();
+    $('.parallax').parallax();
 
-
-  //--------scroll animation-------
-  $(document).ready(function(){
-    $("a").on('click', function(event) {
-        event.preventDefault()
-        var hash = this.hash;
-
-        $('html, body').animate({
-          scrollTop: $(hash).offset().top
-        }, 800, function(){
-      });
-    });
   });
+})(jQuery);
+
+//------drop down selection--------
+$(".dropdown-trigger").dropdown();
+
+
+//--------scroll animation-------
+$(document).ready(function () {
+  $("a").on('click', function (event) {
+    event.preventDefault()
+    var hash = this.hash;
+
+    $('html, body').animate({
+      scrollTop: $(hash).offset().top
+    }, 800, function () {});
+  });
+});
 
 //-------map functionality---------
 var userSelection = "restaurant";
@@ -39,6 +38,7 @@ var markers = [];
 
 var lat = 30.26715;
 var lng = -97.74306;
+var userLocation = '';
 
 var address
 var name;
@@ -51,7 +51,7 @@ var addressArray = [];
 var nameArray = [];
 var idArray = [];
 var websiteArray = []; // Haven't figured out yet
-var priceArray = []; 
+var priceArray = [];
 var ratingArray = [];
 var photosArray = [];
 
@@ -63,11 +63,25 @@ var radius = 8047 // in meters
 
 
 // Get current location
-navigator.geolocation.getCurrentPosition(function(position) {
-  lat = position.coords.latitude;
-  lng = position.coords.longitude;
-  initialize(userSelection);
-});
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(function (position) {
+    lat = position.coords.latitude;
+    lng = position.coords.longitude;
+    initialize(userSelection);
+  }, function () {
+    // User doesn't want to share current location
+    userLocation = $("#location-input").val();
+    // Hardcode to ATX for now
+    lat = 30.26715;
+    lng = -97.74306;
+  });
+} else {
+  // Browser doesn't support GeoLocation
+  userLocation = $("#location-input").val();
+  // Hardcode to ATX for now
+  lat = 30.26715;
+  lng = -97.74306;
+};
 
 function initialize(searchCategory) {
   var center = new google.maps.LatLng(lat, lng);
@@ -168,7 +182,10 @@ function createMarker(place) {
     if (place.photos == undefined) {
       photo = place.icon;
     } else {
-      photo = place.photos[0].getUrl({'maxWidth': 300, 'maxHeight': 300});
+      photo = place.photos[0].getUrl({
+        'maxWidth': 300,
+        'maxHeight': 300
+      });
     };
 
     // Set button text
@@ -182,7 +199,7 @@ function createMarker(place) {
       var stop = "next";
     };
 
-    var html = 
+    var html =
       `<center><div style="overflow: auto;">${name}<br>` +
       `${address}<br>` +
       `Price: ${price}<br>` +
