@@ -14,7 +14,7 @@
 
   //--------scroll animation-------
   $(document).ready(function(){
-    $("a").on('click', function(event) {
+    $(".categories").on('click', function(event) {
         event.preventDefault()
         var hash = this.hash;
 
@@ -23,13 +23,9 @@
             scrollTop: $(hash).offset().top
           }, 800, function(){
           });
-        }
+        };
     });
   });
-
-       
-=======
-})(jQuery);
 
 //------drop down selection--------
 $(".dropdown-trigger").dropdown();
