@@ -66,7 +66,6 @@ var index = 0;
 
 var radius = 8047 // in meters
 
-
 // Get current location
 if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(function (position) {
@@ -243,22 +242,24 @@ function nextWaypoint() {
   if (index === 0) {
     // addressArray[0] = address;
     getAttributes();
-    $("#saved-stuff1").attr("class", "results").append("<p>First destination: " + name + "<br>" + address + "<br>" + "Price: " + price + "<img src='" + photo + "'>" + "</p>");
+    $("#saved-stuff1").attr("class", "results").append("<p>First destination: " + name + "<br>" + address + "<br>" + "Price: " + price + "<br><img src='" + photo + "'>" + "</p>");
     console.log("Chose first destination: " + nameArray[index]);
   } else if (index === 1) {
     // addressArray[1] = address;
     getAttributes();
-    $("#saved-stuff2").attr("class", "results").append("<p>Second destination: " + name + "<br>" + address + "<br>" + "Price: " + price + "<img src='" + photo + "'>" + "</p>");
+    $("#saved-stuff2").attr("class", "results").append("<p>Second destination: " + name + "<br>" + address + "<br>" + "Price: " + price + "<br><img src='" + photo + "'>" + "</p>");
     console.log("Chose second destination: " + nameArray[index]);
   } else if (index === 2) {
     // addressArray[2] = address;
     getAttributes();
-    $("#saved-stuff3").attr("class", "results").append("<p>Third destination: " + name + "<br>" + address + "<br>" + "Price: " + price + "<img src='" + photo + "'>" + "</p>");
+    $("#saved-stuff3").attr("class", "results").append("<p>Third destination: " + name + "<br>" + address + "<br>" + "Price: " + price + "<br><img src='" + photo + "'>" + "</p>");
     console.log("Chose third destination: " + nameArray[index]);
     runRoute();
   };
-  // else if index=3, get route
   index++;
+
+  var newUndoButton = $(`<button id='undo-button' number='${index}'><i class="fas fa-undo-alt"></i> Undo</button>`);
+  $("#undo").html(newUndoButton);
 };
 
 
@@ -278,7 +279,6 @@ $(document).on("click", "button", function (event) {
   event.preventDefault();
   userSelection = $(this).val();
   $("#query").text(userSelection);
-  console.log("User selected: " + userSelection);
   clearResults();
   initialize(userSelection);
 });
@@ -297,3 +297,20 @@ function runRoute() {
     console.log($("#open-route-link"));
 
 };
+
+// Undo function
+$(document).on('click', '#undo-button', function(event) {
+  event.preventDefault();
+  var number = parseInt($(this).attr('number'));
+  console.log("Clicked undo button " + number);
+  addressArray.splice(number - 1, 1);
+  nameArray.splice(number - 1, 1);
+  idArray.splice(number - 1, 1);
+  websiteArray.splice(number - 1, 1);
+  priceArray.splice(number - 1, 1);
+  ratingArray.splice(number - 1, 1);
+  photosArray.splice(number - 1, 1);
+  $("#saved-stuff" + number).empty();
+  index--;
+  $("#undo-button").attr("number", index);
+});
