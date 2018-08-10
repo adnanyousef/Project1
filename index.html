@@ -52,13 +52,21 @@
                     <h5 class="header col s12">A simple way to discover, expore, and upgrade your night out</h5>
                 </div>
 
-                <div class="row center">
-                    <!-- <a href="search.html" id="submit" class="btn-large waves-effect waves-light N/A transparent
-                    z-depth-5">Search
-                        <i class="material-icons right">search</i>
-                    </a> -->
-                    <a href="#section2" class="toMap white-text light">Search</a>
+                <div class="row">
+                    <form class="col s12">
+                        <div class="row">
+                        <div class="input-field col s4 offset-s3">
+                            <input id="location" type="email" class="validate">
+                            <label for="email" class="white-text">Where to?</label>
+                        </div>
+                        <div class="col s4 left">
+                                <a href="#section2" class="toMap white-text light">Search</a>
+                            </div>
+                        </div>
+                       
+                    </form>
                 </div>
+                
                 <br>
                 <br>
 
@@ -146,39 +154,40 @@
                             <!-- Dropdown Structure -->
                             <ul id='dropdown1' class='dropdown-content'>
                                 <li>
-                                    <a href="#!">
+                                    <a class="categories" href="#!">
                                         <button id="restaurant-button" class="select" value="restaurant">Restaurants</button>
                                     </a>
                                 </li>
                                 <li class="divider" tabindex="-1"></li>
                                 <li>
-                                    <a href="#!">
+                                    <a class="categories" href="#!">
                                         <button id="bar-button" class="select" value="bar">Bars</button>
                                     </a>
                                 </li>
                                 <li class="divider" tabindex- "-1"></li>
                                 <li>
-                                    <a href="#!">
+                                    <a class="categories" href="#!">
                                         <button id="cafe-button" class="select" value="cafe">Cafes</button>
                                     </a>
                                 </li>
                                 <li class="divider" tabindex="-1"></li>
                                 <li>
-                                    <a href="#!">
+                                    <a class="categories" href="#!">
                                         <button id="park-button" class="select" value="park">Parks</button>
                                     </a>
                                 </li>
                                 <li class="divider" tabindex="-1"></li>
                                 <li>
-                                    <a href="#!">
+                                    <a class="categories" href="#!">
                                         <button id="liquor-store-button" class="select" value="liquor_store">Liquor Store</button>
                                     </a>
                                 </li>
                                 <li class="divider" tabindex="-1"></li>
                                 <li>
-                                    <a href="#!">
+                                    <a class="categories" href="#!">
                                         <button id="gas-station-button" class="select" value="gas_station">Gas Station</button>
                                     </a>
+
                                 </li>
                                 <li class="divider" tabindex="-1"></li>
                             </ul>
@@ -212,6 +221,8 @@
 
         </div>
     </div>
+
+    <a href="#" target="_blank" id="open-route-link">Open Route!</a>
 
     <footer class="page-footer black">
         <div class="footer">
