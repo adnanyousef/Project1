@@ -53,16 +53,19 @@ p {
     top: 40px;
 }
 
-footer.page-footer {
-  margin: 0;
-  border-top: .5px solid grey;
+#location{
+  color: #ffffff;
+  font-size: 1.35rem;
 }
 
-#map {
-  height: 500px;
-  /* width: 100%; */
-  /* margin-left: 50px;
-  margin-bottom: 45px; */
+#locationInput {
+  color: #ffffff;
+  font-size: 1.35rem;
+}
+
+.row .input-field input:focus {
+  border-bottom: 1px solid #ffffff !important;
+  box-shadow: 0 1px 0 0 #ffffff !important;
 }
 
 .dropdown-trigger{
@@ -80,21 +83,6 @@ footer.page-footer {
   padding:0;
 }
 
-#location{
-  color: #ffffff;
-  font-size: 1.35rem;
-}
-
-#locationInput {
-  color: #ffffff;
-  font-size: 1.35rem;
-}
-
-.row .input-field input:focus {
-  border-bottom: 1px solid #ffffff !important;
-  box-shadow: 0 1px 0 0 #ffffff !important;
-}
-
 .user-choice {
   color: #ffffff;
   font-size: 1rem;
@@ -103,13 +91,46 @@ footer.page-footer {
   background-color: #d32f2f;
 }
 
+#map {
+  height: 500px;
+  width: 97%;
+  margin-left: 20px;
+ 
+}
+
 .results {
   font-size: 1rem;
-  color: red;
 } 
 
 .collapsible {
-  margin: 0px;
+  margin-top: 0px;
+  margin-right: 20px;
+  
 }
 
+/* .collapsible-header {
+  
+} */
 
+.collapsible-body {
+  padding: 10px;
+  color: #ffffff;
+  background-color: #d32f2f;
+}
+
+hr {
+  border-color: #ffffff;
+  width: 70%;
+}
+
+footer.page-footer {
+  margin: 0;
+  border-top: .5px solid grey;
+}
+
+.toast {
+  background-color: #ffffff;
+  color: #000000;
+  font-weight: 450;
+  border: 2px solid #d32f2f;
+}

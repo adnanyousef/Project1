@@ -249,17 +249,17 @@ function nextWaypoint() {
   if (index === 0) {
     // addressArray[0] = address;
     getAttributes();
-    $("#saved-stuff1").attr("class", "results").append(name + "<br>" + "<hr>" + address + "<br>");
+    $("#saved-stuff1").attr("class", "results").append(name + "<br>" + "<hr align='left'>" + address + "<br>");
     console.log("Chose first destination: " + nameArray[index]);
   } else if (index === 1) {
     // addressArray[1] = address;
     getAttributes();
-    $("#saved-stuff2").attr("class", "results").append(name + "<br>" + address + "<br>");
+    $("#saved-stuff2").attr("class", "results").append(name + "<br>" + "<hr align='left'>" + address + "<br>");
     console.log("Chose second destination: " + nameArray[index]);
   } else if (index === 2) {
     // addressArray[2] = address;
     getAttributes();
-    $("#saved-stuff3").attr("class", "results").append(name + "<br>" + address + "<br>");
+    $("#saved-stuff3").attr("class", "results").append(name + "<br>" + "<hr align='left'>" + address + "<br>");
     console.log("Chose third destination: " + nameArray[index]);
     runRoute();
   };
