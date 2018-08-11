@@ -199,13 +199,13 @@ function createMarker(place) {
 
     // Set button text
     if (index == 0) {
-      var stop = "first";
+      var stop = "First";
     } else if (index == 1) {
-      var stop = "second";
+      var stop = "Second";
     } else if (index == 2) {
-      var stop = "third";
+      var stop = "Third";
     } else {
-      var stop = "next";
+      var stop = "Next";
     };
 
     var html =
@@ -214,7 +214,7 @@ function createMarker(place) {
       `Price: ${price}<br>` +
       `Rating: ${rating}<br>` +
       `<img src="${photo}"><br>` +
-      `<button class="user-choice" onclick='nextWaypoint()'>Select ${stop} stop</button></div></center>`;
+      `<button class="user-choice" onclick='nextWaypoint()'>Select ${stop} Stop</button></div></center>`;
 
     infowindow.setContent(html);
 
@@ -242,17 +242,18 @@ function nextWaypoint() {
   if (index === 0) {
     // addressArray[0] = address;
     getAttributes();
-    $("#saved-stuff1").attr("class", "results").append("<p>First destination: " + name + "<br>" + address + "<br>" + "Price: " + price + "<br><img src='" + photo + "'>" + "</p>");
+    $("#saved-stuff4").attr("class", "results").append("<p>First Dest </p>");
+    $("#saved-stuff1").attr("class", "results").append("<p>First destination:" + "<br>" + name + "<br>" + address + "<br>" + "</p>");
     console.log("Chose first destination: " + nameArray[index]);
   } else if (index === 1) {
     // addressArray[1] = address;
     getAttributes();
-    $("#saved-stuff2").attr("class", "results").append("<p>Second destination: " + name + "<br>" + address + "<br>" + "Price: " + price + "<br><img src='" + photo + "'>" + "</p>");
+    $("#saved-stuff2").attr("class", "results").append("<p>Second destination: " + name + "<br>" + address + "<br>" + "</p>");
     console.log("Chose second destination: " + nameArray[index]);
   } else if (index === 2) {
     // addressArray[2] = address;
     getAttributes();
-    $("#saved-stuff3").attr("class", "results").append("<p>Third destination: " + name + "<br>" + address + "<br>" + "Price: " + price + "<br><img src='" + photo + "'>" + "</p>");
+    $("#saved-stuff3").attr("class", "results").append("<p>Third destination: " + name + "<br>" + address + "<br>" + "</p>");
     console.log("Chose third destination: " + nameArray[index]);
     runRoute();
   };
@@ -314,3 +315,4 @@ $(document).on('click', '#undo-button', function(event) {
   index--;
   $("#undo-button").attr("number", index);
 });
+

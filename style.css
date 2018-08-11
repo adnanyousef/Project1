@@ -60,9 +60,9 @@ footer.page-footer {
 
 #map {
   height: 500px;
-  width: 90%;
-  margin: auto;
-  margin-bottom: 45px;
+  /* width: 100%; */
+  /* margin-left: 50px;
+  margin-bottom: 45px; */
 }
 
 .dropdown-trigger{
@@ -80,12 +80,6 @@ footer.page-footer {
   padding:0;
 }
 
-.results:hover {
-  border: 2px solid black;
-  padding: 0px;
-   border-style: solid;
-}
-
 #location{
   color: #ffffff;
   font-size: 1.35rem;
@@ -99,4 +93,25 @@ footer.page-footer {
 .row .input-field input:focus {
   border-bottom: 1px solid #ffffff !important;
   box-shadow: 0 1px 0 0 #ffffff !important;
+}
+
+.user-choice {
+  color: #ffffff;
+  font-size: 1rem;
+  margin-top: 5px;
+  padding: 8px;
+  background-color: #d32f2f;
+}
+
+.results {
+  font-size: 1rem;
+  color: red;
+} 
+
+.card {
+  margin: 0px;
+}
+
+.card .card-content {
+  padding: 5px;
 }

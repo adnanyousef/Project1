@@ -49,7 +49,7 @@
                 <br>
                 <h1 class="header center white-text">Where2 </h1>
                 <div class="row center">
-                    <h5 class="header col s12">A simple way to discover and expore what lies between your Point A and Point B</h5>
+                    <h5 class="header col s12">Discover and expore what lies between your Point A and Point B</h5>
                 </div>
 
                 <div class="row">
@@ -58,7 +58,7 @@
                             <div class= "col s4"></div>
                             <div class="input-field col s3">
                                 <input id="locationInput" type="text" class="validate">
-                                <label id="location" for="textInput">Where do you want 2 go?</label>
+                                <label id="location" for="textInput">Location</label>
                             </div>
                             <div class="input-field col s4">
                                 <a href="#section2" id="searchButton" class="btn N/A transparent">search</a>
@@ -198,30 +198,43 @@
         </div>
     </div>
 
-    <div id="map"></div>
-
-    <div id="undo" style="text-align: center; margin-left: auto; margin-right: auto;"></div>
-
-    <div class="container">
-        <div class="section">
-
-            <!--   Icon Section   -->
-            <div class="row">
-                <div class="col s12 m4 center">
-                    <div id="saved-stuff1"></div>
+    <div class="wrapper">
+        <div class="row">
+            <div class="col s10">
+                <div id="map" class="z-depth-2"></div>
+            </div>
+            <div class= "col s2">
+               <div class="row">
+                   <div class="col s12">
+                        <!-- <div id="saved-stuff4"></div> -->
+                        <div class="row">
+                            <div class="col s12">
+                                <div class="card">
+                                <div class="card-content black-text">
+                                    <span class="card-title"><div id="saved-stuff4"></div></span>
+                                    <p><div id="saved-stuff1"></div></p>
+                                </div>
+                                
+                                </div>
+                            </div>
+                        </div>
+                   </div>
+               </div>
+               <div class="row">
+                    <div class="col s12">
+                        <div id="saved-stuff2"></div>
+                    </div>
                 </div>
-
-                <div class="col s12 m4 center">
-                    <div id="saved-stuff2"></div>
-                </div>
-
-                <div class="col s12 m4 center">
-                    <div id="saved-stuff3"></div>
+                <div class="row">
+                    <div class="col s12">
+                        <div id="saved-stuff3"></div>
+                    </div>
                 </div>
             </div>
-
         </div>
     </div>
+
+    <div id="undo" style="text-align: center; margin-left: auto; margin-right: auto;"></div>
 
     <a href="#" target="_blank" id="open-route-link">Open Route!</a>
 
