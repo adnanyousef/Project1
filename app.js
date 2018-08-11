@@ -230,9 +230,9 @@ function createMarker(place) {
 function clearResults(markers) {
   for (var m in markers) {
     markers[m].setMap(null);
-  }
+  };
   markers = [];
-}
+};
 
 google.maps.event.addDomListener(window, 'load', function () {
   initialize(userSelection);
@@ -240,7 +240,16 @@ google.maps.event.addDomListener(window, 'load', function () {
 
 //alert selection was made
 function alertToast() {
-  M.toast({html: 'Destination Selected'})
+  if (index === 1) {
+    var dest = "First";
+  } else if (index === 2) {
+    var dest = "Second";
+  } else if (index === 3) {
+    var dest = "Third";
+  } else {
+    var dest = "Next";
+  };
+  M.toast({html: dest + ' Destination Selected'})
 }
 
 // Choose next waypoint
@@ -261,11 +270,12 @@ function nextWaypoint() {
     getAttributes();
     $("#saved-stuff3").attr("class", "results").append(name + "<br>" + "<hr align='left'>" + address + "<br>");
     console.log("Chose third destination: " + nameArray[index]);
+    $("#route-link").fadeIn("slow");
     runRoute();
   };
   index++;
 
-  var newUndoButton = $(`<button id='undo-button' number='${index}'><i class="fas fa-undo-alt"></i>   Undo</button>`);
+  var newUndoButton = $(`<button id='undo-button' number='${index}'><i class="fas fa-undo-alt"></i>   <span class="underline-on-hover">Undo</span></button>`);
   $("#undo").html(newUndoButton);
 };
 
