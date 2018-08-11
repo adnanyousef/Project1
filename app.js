@@ -265,7 +265,7 @@ function nextWaypoint() {
   };
   index++;
 
-  var newUndoButton = $(`<button id='undo-button' number='${index}'><i class="fas fa-undo-alt"></i> Undo</button>`);
+  var newUndoButton = $(`<button id='undo-button' number='${index}'><i class="fas fa-undo-alt"></i>   Undo</button>`);
   $("#undo").html(newUndoButton);
 };
 

@@ -95,7 +95,7 @@ p {
   height: 500px;
   width: 97%;
   margin-left: 20px;
- 
+  margin-bottom: 35px;
 }
 
 .results {
@@ -108,10 +108,6 @@ p {
   
 }
 
-/* .collapsible-header {
-  
-} */
-
 .collapsible-body {
   padding: 10px;
   color: #ffffff;
@@ -123,14 +119,41 @@ hr {
   width: 70%;
 }
 
-footer.page-footer {
-  margin: 0;
-  border-top: .5px solid grey;
-}
-
 .toast {
   background-color: #ffffff;
   color: #000000;
   font-weight: 450;
   border: 2px solid #d32f2f;
 }
+
+#undo-button {
+  padding: 14.5px;
+  margin-left: 2px;
+  border: 1px;
+  width: 98%;
+  text-align: left;
+}
+
+button:focus {
+  background-color: #ffffff;
+}
+
+#open-route-link {
+  color: black;
+}
+
+#route-link {
+  padding: 14.5px;
+  border-top: 1.2px solid #EDEDED;
+
+}
+
+#route-link :hover {
+  color: #d32f2f;
+}
+
+footer.page-footer {
+  margin: 0;
+  border-top: .5px solid grey;
+}
+
