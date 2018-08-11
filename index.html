@@ -21,7 +21,7 @@
 
 <body>
 
-    <nav class="N/A transparent" role="navigation">
+    <!-- <nav class="N/A transparent" role="navigation">
         <div class="nav-wrapper container">
             <a id="logo-container" href="#" class="brand-logo black-text">Team 3</a>
             <ul class="right hide-on-med-and-down">
@@ -39,7 +39,7 @@
                 <i class="material-icons">menu</i>
             </a>
         </div>
-    </nav>
+    </nav> -->
 
     <div id="index-banner" class="parallax-container">
         <div class="section no-pad-bot">
@@ -47,36 +47,35 @@
             <div class="container">
                 <br>
                 <br>
-                <h1 class="header center white-text">Out on the Town </h1>
+                <h1 class="header center white-text">Where2 </h1>
                 <div class="row center">
-                    <h5 class="header col s12">A simple way to discover, expore, and upgrade your night out</h5>
+                    <h5 class="header col s12">Discover and expore what lies between you and your destination</h5>
                 </div>
 
                 <div class="row">
                     <form class="col s12">
                         <div class="row">
-                        <div class="input-field col s4 offset-s3">
-                            <input id="location" type="email" class="validate">
-                            <label for="email" class="white-text">Where to?</label>
-                        </div>
-                        <div class="col s4 left">
-                                <a href="#section2" id="searchButton" class="toMap white-text light">Search</a>
+                            <div class="col s4"></div>
+                            <div class="input-field col s3">
+                                <input id="locationInput" type="text" class="validate">
+                                <label id="location" for="textInput">Location</label>
+                            </div>
+                            <div class="input-field col s4">
+                                <a href="#section2" id="searchButton" class="btn N/A transparent">search</a>
                             </div>
                         </div>
-                       
                     </form>
                 </div>
-                
+
                 <br>
                 <br>
 
             </div>
         </div>
         <div class="parallax">
-            <img src="background1.jpg" alt="Unsplashed background img 1">
+            <img src="background7.jpg" alt="Unsplashed background img 1">
         </div>
     </div>
-
 
     <div class="container">
         <div class="section">
@@ -198,32 +197,35 @@
         </div>
     </div>
 
-    <div id="map"></div>
-
-    <div id="undo" style="text-align: center; margin-left: auto; margin-right: auto;"></div>
-
-    <div class="container">
-        <div class="section">
-
-            <!--   Icon Section   -->
-            <div class="row">
-                <div class="col s12 m4 center">
-                    <div id="saved-stuff1"></div>
-                </div>
-
-                <div class="col s12 m4 center">
-                    <div id="saved-stuff2"></div>
-                </div>
-
-                <div class="col s12 m4 center">
-                    <div id="saved-stuff3"></div>
-                </div>
+    <div class="wrapper">
+        <div class="row">
+            <div class="col s9">
+                <div id="map" class="z-depth-2"></div>
             </div>
-
+            <div class="col s3">
+                <ul class="collapsible z-depth-1">
+                    <li>
+                        <div class="collapsible-header"><strong>First Destination</strong></div>
+                        <div class="collapsible-body"><span><div id="saved-stuff1"></div></span></div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><strong>Second Destination</strong></div>
+                        <div class="collapsible-body"><span><div id="saved-stuff2"></div></span></div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><strong>Third Destination</strong></div>
+                        <div class="collapsible-body"><span><div id="saved-stuff3"></div></span></div>
+                    </li>
+                    <li>
+                        <div id="undo" style="text-align: left; margin-left: auto; margin-right: auto;"></div>
+                    </li>
+                    <li id="route-link">
+                        <a href="#" target="_blank" id="open-route-link">Map It!</a>
+                    </li>
+                  </ul>                
+            </div>
         </div>
     </div>
-
-    <a href="#" target="_blank" id="open-route-link">Open Route!</a>
 
     <footer class="page-footer black">
         <div class="footer">

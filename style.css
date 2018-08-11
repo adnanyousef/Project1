@@ -53,20 +53,21 @@ p {
     top: 40px;
 }
 
-footer.page-footer {
-  margin: 0;
-  border-top: .5px solid grey;
+#location{
+  color: #ffffff;
+  font-size: 1.35rem;
 }
 
-/* map display */
-#map {
-  height: 500px;
-  width: 90%;
-  margin: auto;
-  margin-bottom: 45px;
+#locationInput {
+  color: #ffffff;
+  font-size: 1.35rem;
 }
 
-/* drop down map buttons*/
+.row .input-field input:focus {
+  border-bottom: 1px solid #ffffff !important;
+  box-shadow: 0 1px 0 0 #ffffff !important;
+}
+
 .dropdown-trigger{
   width: 35%;
 }
@@ -82,15 +83,77 @@ footer.page-footer {
   padding:0;
 }
 
-.results:hover {
-  border: 2px solid black;
-  padding: 0px;
-   border-style: solid;
+.user-choice {
+  color: #ffffff;
+  font-size: 1rem;
+  margin-top: 5px;
+  padding: 8px;
+  background-color: #d32f2f;
 }
 
-#location{
+#map {
+  height: 500px;
+  width: 97%;
+  margin-left: 20px;
+  margin-bottom: 35px;
+}
+
+.results {
+  font-size: 1rem;
+} 
+
+.collapsible {
+  margin-top: 0px;
+  margin-right: 20px;
+  
+}
+
+.collapsible-body {
+  padding: 10px;
   color: #ffffff;
-  font-size: 1.rem;
-  position: absolute;
+  background-color: #d32f2f;
+}
+
+hr {
+  border-color: #ffffff;
+  width: 70%;
+}
+
+.toast {
+  background-color: #ffffff;
+  color: #000000;
+  font-weight: 450;
+  border: 2px solid #d32f2f;
+}
+
+#undo-button {
+  padding: 14.5px;
+  margin-left: 2px;
+  border: 1px;
+  width: 98%;
+  text-align: left;
+}
+
+button:focus {
+  background-color: #ffffff;
+}
+
+#open-route-link {
+  color: black;
+}
+
+#route-link {
+  padding: 14.5px;
+  border-top: 1.2px solid #EDEDED;
+
+}
+
+#route-link :hover {
+  color: #d32f2f;
+}
+
+footer.page-footer {
+  margin: 0;
+  border-top: .5px solid grey;
 }
 
