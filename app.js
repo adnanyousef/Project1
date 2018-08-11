@@ -240,7 +240,7 @@ google.maps.event.addDomListener(window, 'load', function () {
 
 //alert selection was made
 function alertToast() {
-  M.toast({html: 'Destination Selected'})
+  M.toast({html: 'Destination Selected', displayLength: 1800})
 }
 
 // Choose next waypoint

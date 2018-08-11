@@ -44,6 +44,10 @@ p {
   font-size: inherit;
 }
 
+#logo {
+  width: 400px;
+}
+
 .toMap {
     font-size: 1.5rem;
     margin-top: 25px;
