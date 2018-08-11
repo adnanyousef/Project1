@@ -242,8 +242,7 @@ function nextWaypoint() {
   if (index === 0) {
     // addressArray[0] = address;
     getAttributes();
-    $("#saved-stuff4").attr("class", "results").append("<p>First Dest </p>");
-    $("#saved-stuff1").attr("class", "results").append("<p>First destination:" + "<br>" + name + "<br>" + address + "<br>" + "</p>");
+    $("#saved-stuff1").attr("class", "results").append("<p>First Destination: " + "<br>" + name + "<br>" + address + "<br>" + "</p>");
     console.log("Chose first destination: " + nameArray[index]);
   } else if (index === 1) {
     // addressArray[1] = address;
