@@ -12,9 +12,9 @@
   $(".dropdown-trigger").dropdown();
 
 
-  //--------scroll animation-------
+  //--------search scroll animation-------
   $(document).ready(function(){
-    $(".categories").on('click', function(event) {
+    $("#searchButton").on('click', function(event) {
         event.preventDefault()
         var hash = this.hash;
 
@@ -27,21 +27,9 @@
     });
   });
 
-//------drop down selection--------
-$(".dropdown-trigger").dropdown();
-
-
-//--------scroll animation-------
-$(document).ready(function () {
-  $(".categories").on('click', function (event) {
-    event.preventDefault()
-    var hash = this.hash;
-    console.log(hash);
-
-    $('html, body').animate({
-      scrollTop: $(hash).offset().top
-    }, 800, function () {});
-  });
+//-------collapsible-------
+$(document).ready(function(){
+  $('.collapsible').collapsible();
 });
 
 
@@ -80,7 +68,6 @@ var numberOfWaypoints = 3;
 var index = 0;
 
 var radius = 8047 // in meters
-
 
 // Get current location
 if (navigator.geolocation) {
@@ -156,88 +143,88 @@ var marker = new google.maps.Marker({
   position: place.geometry.location
 });
 
-google.maps.event.addListener(marker, 'click', function () {
-  test = place;
-  address = place.vicinity;
-  name = place.name;
-  id = place.id;
-  // website = place.website
+  google.maps.event.addListener(marker, 'click', function () {
+    test = place;
+    address = place.vicinity;
+    name = place.name;
+    id = place.id;
+    // website = place.website
 
-  // Set price level to font-awesome icons
-  if (place.price_level == 1) {
-    price = `<i class="fas fa-dollar-sign"></i>`;
-  } else if (place.price_level == 2) {
-    price = `<i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign"></i>`;
-  } else if (place.price_level == 3) {
-    price = `<i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign"></i>`;
-  } else if (place.price_level == 4) {
-    price = `<i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign"></i>`;
-  } else if (place.price_level == 5) {
-    price = `<i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign"></i>`;
-  } else {
-    price = "N/A";
-  };
+    // Set price level to font-awesome icons
+    if (place.price_level == 1) {
+      price = `<i class="fas fa-dollar-sign"></i>`;
+    } else if (place.price_level == 2) {
+      price = `<i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign"></i>`;
+    } else if (place.price_level == 3) {
+      price = `<i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign"></i>`;
+    } else if (place.price_level == 4) {
+      price = `<i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign"></i>`;
+    } else if (place.price_level == 5) {
+      price = `<i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign"></i>`;
+    } else {
+      price = "N/A";
+    };
 
-  // Set ratings to font-awesome icons
-  if (place.rating >= 0 && place.rating < 1) {
-    rating = `<i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>`;
-  } else if (place.rating >= 1 && place.rating <= 1.5) {
-    rating = `<i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>`;
-  } else if (place.rating > 1.5 && place.rating <= 2) {
-    rating = `<i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>`;
-  } else if (place.rating > 2 && place.rating <= 2.5) {
-    rating = `<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>`;
-  } else if (place.rating > 2.5 && place.rating <= 3) {
-    rating = `<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i><i class="far fa-star"></i>`;
-  } else if (place.rating > 3 && place.rating <= 3.5) {
-    rating = `<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>`;
-  } else if (place.rating > 3.5 && place.rating <= 4) {
-    rating = `<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>`;
-  } else if (place.rating > 4 && place.rating <= 4.4) {
-    rating = `<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>`;
-  } else if (place.rating > 4.4 && place.rating < 4.8) {
-    rating = `<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>`;
-  } else if (place.rating >= 4.8) {
-    rating = `<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>`;
-  } else {
-    rating = "N/A";
-  };
+    // Set ratings to font-awesome icons
+    if (place.rating >= 0 && place.rating < 1) {
+      rating = `<i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>`;
+    } else if (place.rating >= 1 && place.rating <= 1.5) {
+      rating = `<i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>`;
+    } else if (place.rating > 1.5 && place.rating <= 2) {
+      rating = `<i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>`;
+    } else if (place.rating > 2 && place.rating <= 2.5) {
+      rating = `<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>`;
+    } else if (place.rating > 2.5 && place.rating <= 3) {
+      rating = `<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i><i class="far fa-star"></i>`;
+    } else if (place.rating > 3 && place.rating <= 3.5) {
+      rating = `<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>`;
+    } else if (place.rating > 3.5 && place.rating <= 4) {
+      rating = `<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>`;
+    } else if (place.rating > 4 && place.rating <= 4.4) {
+      rating = `<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>`;
+    } else if (place.rating > 4.4 && place.rating < 4.8) {
+      rating = `<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>`;
+    } else if (place.rating >= 4.8) {
+      rating = `<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>`;
+    } else {
+      rating = "N/A";
+    };
 
-  // Test if a photo not in Google's database, use generic icon
-  if (place.photos == undefined) {
-    photo = place.icon;
-  } else {
-    photo = place.photos[0].getUrl({
-      'maxWidth': 300,
-      'maxHeight': 300
-    });
-  };
+    // Test if a photo not in Google's database, use generic icon
+    if (place.photos == undefined) {
+      photo = place.icon;
+    } else {
+      photo = place.photos[0].getUrl({
+        'maxWidth': 300,
+        'maxHeight': 300
+      });
+    };
 
-  // Set button text
-  if (index == 0) {
-    var stop = "first";
-  } else if (index == 1) {
-    var stop = "second";
-  } else if (index == 2) {
-    var stop = "third";
-  } else {
-    var stop = "next";
-  };
+    // Set button text
+    if (index == 0) {
+      var stop = "First";
+    } else if (index == 1) {
+      var stop = "Second";
+    } else if (index == 2) {
+      var stop = "Third";
+    } else {
+      var stop = "Next";
+    };
 
-  var html =
-    `<center><div style="overflow: auto;">${name}<br>` +
-    `${address}<br>` +
-    `Price: ${price}<br>` +
-    `Rating: ${rating}<br>` +
-    `<img src="${photo}"><br>` +
-    `<button class="user-choice" onclick='nextWaypoint()'>Select ${stop} stop</button></div></center>`;
+    var html =
+      `<center><div style="overflow: auto;">${name}<br>` +
+      `${address}<br>` +
+      `Price: ${price}<br>` +
+      `Rating: ${rating}<br>` +
+      `<img src="${photo}"><br>` +
+      `<button class="user-choice" onclick='nextWaypoint(); alertToast()'>Select ${stop} Stop</button></div></center>`;
+    
+    infowindow.setContent(html);
 
-  infowindow.setContent(html);
-
-  console.log(address);
-  infowindow.open(map, this);
-});
-return marker;
+    console.log(address);
+    infowindow.open(map, this);
+  });
+  return marker;
 };
 
 function clearResults(markers) {
@@ -251,29 +238,35 @@ google.maps.event.addDomListener(window, 'load', function () {
 initialize(userSelection);
 });
 
+//alert selection was made
+function alertToast() {
+  M.toast({html: 'Destination Selected'})
+}
 
 // Choose next waypoint
 function nextWaypoint() {
+  
+  if (index === 0) {
+    // addressArray[0] = address;
+    getAttributes();
+    $("#saved-stuff1").attr("class", "results").append(name + "<br>" + "<hr align='left'>" + address + "<br>");
+    console.log("Chose first destination: " + nameArray[index]);
+  } else if (index === 1) {
+    // addressArray[1] = address;
+    getAttributes();
+    $("#saved-stuff2").attr("class", "results").append(name + "<br>" + "<hr align='left'>" + address + "<br>");
+    console.log("Chose second destination: " + nameArray[index]);
+  } else if (index === 2) {
+    // addressArray[2] = address;
+    getAttributes();
+    $("#saved-stuff3").attr("class", "results").append(name + "<br>" + "<hr align='left'>" + address + "<br>");
+    console.log("Chose third destination: " + nameArray[index]);
+    runRoute();
+  };
+  index++;
 
-if (index === 0) {
-  // addressArray[0] = address;
-  getAttributes();
-  $("#saved-stuff1").attr("class", "results").append("<p>First destination: " + name + "<br>" + address + "<br>" + "Price: " + price + "<img src='" + photo + "'>" + "</p>");
-  console.log("Chose first destination: " + nameArray[index]);
-} else if (index === 1) {
-  // addressArray[1] = address;
-  getAttributes();
-  $("#saved-stuff2").attr("class", "results").append("<p>Second destination: " + name + "<br>" + address + "<br>" + "Price: " + price + "<img src='" + photo + "'>" + "</p>");
-  console.log("Chose second destination: " + nameArray[index]);
-} else if (index === 2) {
-  // addressArray[2] = address;
-  getAttributes();
-  $("#saved-stuff3").attr("class", "results").append("<p>Third destination: " + name + "<br>" + address + "<br>" + "Price: " + price + "<img src='" + photo + "'>" + "</p>");
-  console.log("Chose third destination: " + nameArray[index]);
-  runRoute();
-};
-// else if index=3, get route
-index++;
+  var newUndoButton = $(`<button id='undo-button' number='${index}'><i class="fas fa-undo-alt"></i>   Undo</button>`);
+  $("#undo").html(newUndoButton);
 };
 
 
@@ -290,12 +283,11 @@ photosArray[index] = photo;
 
 // Click on category buttons
 $(document).on("click", "button", function (event) {
-event.preventDefault();
-userSelection = $(this).val();
-$("#query").text(userSelection);
-console.log("User selected: " + userSelection);
-clearResults();
-initialize(userSelection);
+  event.preventDefault();
+  userSelection = $(this).val();
+  $("#query").text(userSelection);
+  clearResults();
+  initialize(userSelection);
 });
 
 
@@ -314,3 +306,21 @@ var routeURL = "https://www.google.com/maps/dir/?api=1&" + "+Austin+TX&destinati
   console.log($("#open-route-link"));
 
 };
+
+// Undo function
+$(document).on('click', '#undo-button', function(event) {
+  event.preventDefault();
+  var number = parseInt($(this).attr('number'));
+  console.log("Clicked undo button " + number);
+  addressArray.splice(number - 1, 1);
+  nameArray.splice(number - 1, 1);
+  idArray.splice(number - 1, 1);
+  websiteArray.splice(number - 1, 1);
+  priceArray.splice(number - 1, 1);
+  ratingArray.splice(number - 1, 1);
+  photosArray.splice(number - 1, 1);
+  $("#saved-stuff" + number).empty();
+  index--;
+  $("#undo-button").attr("number", index);
+});
+
