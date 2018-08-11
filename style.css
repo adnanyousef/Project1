@@ -108,11 +108,8 @@ footer.page-footer {
   color: red;
 } 
 
-.card {
+.collapsible {
   margin: 0px;
 }
 
-.card .card-content {
-  padding: 5px;
-}
 

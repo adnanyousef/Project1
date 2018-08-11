@@ -12,7 +12,7 @@
   $(".dropdown-trigger").dropdown();
 
 
-  //--------scroll animation-------
+  //--------search scroll animation-------
   $(document).ready(function(){
     $("#searchButton").on('click', function(event) {
         event.preventDefault()
@@ -27,8 +27,11 @@
     });
   });
 
-//------drop down selection--------
-$(".dropdown-trigger").dropdown();
+//-------collapsible-------
+$(document).ready(function(){
+  $('.collapsible').collapsible();
+});
+
 
 var userSelection = "restaurant";
 
@@ -214,8 +217,8 @@ function createMarker(place) {
       `Price: ${price}<br>` +
       `Rating: ${rating}<br>` +
       `<img src="${photo}"><br>` +
-      `<button class="user-choice" onclick='nextWaypoint()'>Select ${stop} Stop</button></div></center>`;
-
+      `<button class="user-choice" onclick='nextWaypoint(); alertToast()'>Select ${stop} Stop</button></div></center>`;
+    
     infowindow.setContent(html);
 
     console.log(address);
@@ -235,24 +238,28 @@ google.maps.event.addDomListener(window, 'load', function () {
   initialize(userSelection);
 });
 
+//alert selection was made
+function alertToast() {
+  M.toast({html: 'Destination Selected'})
+}
 
 // Choose next waypoint
 function nextWaypoint() {
-
+  
   if (index === 0) {
     // addressArray[0] = address;
     getAttributes();
-    $("#saved-stuff1").attr("class", "results").append("<p>First Destination: " + "<br>" + name + "<br>" + address + "<br>" + "</p>");
+    $("#saved-stuff1").attr("class", "results").append(name + "<br>" + "<hr>" + address + "<br>");
     console.log("Chose first destination: " + nameArray[index]);
   } else if (index === 1) {
     // addressArray[1] = address;
     getAttributes();
-    $("#saved-stuff2").attr("class", "results").append("<p>Second destination: " + name + "<br>" + address + "<br>" + "</p>");
+    $("#saved-stuff2").attr("class", "results").append(name + "<br>" + address + "<br>");
     console.log("Chose second destination: " + nameArray[index]);
   } else if (index === 2) {
     // addressArray[2] = address;
     getAttributes();
-    $("#saved-stuff3").attr("class", "results").append("<p>Third destination: " + name + "<br>" + address + "<br>" + "</p>");
+    $("#saved-stuff3").attr("class", "results").append(name + "<br>" + address + "<br>");
     console.log("Chose third destination: " + nameArray[index]);
     runRoute();
   };
