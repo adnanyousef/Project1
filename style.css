@@ -161,3 +161,23 @@ footer.page-footer {
   border-top: .5px solid grey;
 }
 
+#route-link {
+  display: none;
+}
+
+#open-route-link {
+  color: white;
+  font-weight: bold;
+}
+
+#open-route-link:hover {
+  color: white;
+}
+
+#map-it:hover {
+  color: white;
+}
+
+.underline-on-hover:hover {
+  text-decoration: underline;
+}
