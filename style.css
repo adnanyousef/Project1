@@ -172,3 +172,15 @@ footer.page-footer {
     margin: 0 7px 0 7px;
   }
 }
+
+@media screen and (max-width: 480px) {
+  #map {
+    height: 300px;
+    margin: auto;
+    margin-bottom: 50px;
+  }
+
+  .collapsible {
+    margin: 0 2px 0 2px;
+  }
+}
