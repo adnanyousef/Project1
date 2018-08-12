@@ -139,6 +139,11 @@ button:focus {
   text-decoration: underline;
 }
 
+/* weather display */
+#weatherInfo {
+  margin: 0px 20px 0 0;
+}
+
 /* footer */
 footer.page-footer {
   margin: 0;
@@ -171,6 +176,10 @@ footer.page-footer {
   .collapsible {
     margin: 0 7px 0 7px;
   }
+
+  #weatherInfo {
+    margin: 0 7px 0 7px;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -181,6 +190,10 @@ footer.page-footer {
   }
 
   .collapsible {
+    margin: 0 2px 0 2px;
+  }
+
+  #weatherInfo {
     margin: 0 2px 0 2px;
   }
 }
