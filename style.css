@@ -9,12 +9,12 @@ p {
   height: auto;
   color: rgba(255,255,255,.9);
 }
-  .parallax-container .section {
-    width: 100%;
-  }
+.parallax-container .section {
+  width: 100%;
+}
   
 /* header */
-.lighten-1 {
+.titleRow {
   height: 150px;
   background-color: #d32f2f;
 }
