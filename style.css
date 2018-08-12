@@ -4,7 +4,7 @@ p {
 }
 
 .parallax-container {
-  min-height: 380px;
+  min-height: 300px;
   line-height: 0;
   height: auto;
   color: rgba(255,255,255,.9);
@@ -12,6 +12,12 @@ p {
   .parallax-container .section {
     width: 100%;
   }
+  
+/* header */
+.lighten-1 {
+  height: 150px;
+  background-color: #d32f2f;
+}
 
 /* icon section */
 .icon-block {
@@ -40,6 +46,11 @@ p {
 .row .input-field input:focus {
   border-bottom: 1px solid #ffffff !important;
   box-shadow: 0 1px 0 0 #ffffff !important;
+}
+
+/* banner text */
+#firstTextBlock {
+  margin-top: 60px;
 }
 
 /* location menu */

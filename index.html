@@ -21,16 +21,22 @@
 
 <body>
 
-    <div id="index-banner" class="parallax-container">
-        <div class="section no-pad-bot">
-
-            <div class="container">
-                <br>
-                <br>
+    <div class="header-fixed">
+        <nav class="lighten-1">
                 <div class="row center">
-                    <img src="title2.png" id="logo" class="center" alt="titleLogo">
+                        <img src="title2.png" id="logo" class="center" alt="titleLogo">
                 </div>
+        </nav>
+    </div>
+    <br>
+    <br>
 
+
+    <div id="index-banner" class="parallax-container">
+        <div class="section no-pad-bot" id="firstTextBlock">
+
+            <div class="container center">
+                
                 <div class="row center">
                     <h5 class="header col s12">Discover and expore what lies between you and where you're going</h5>
                 </div>
@@ -61,7 +67,7 @@
     </div>
 
     <div class="container">
-        <div class="section">
+        <div class="section no-pad-bot no-pad-top">
 
             <!--   Icon Section   -->
             <div class="row">
@@ -186,7 +192,7 @@
                 <div id="map" class="z-depth-2"></div>
             </div>
             <div class="col s12 m3">
-                <ul class="collapsible z-depth-1">
+                <ul class="collapsible">
                     <li>
                         <div class="collapsible-header">
                             <strong>First Destination</strong>
@@ -263,7 +269,7 @@
 
     <!--Javascript-->
     <script src="app.js"></script>
-    <script src="weather.js"></script> 
+    <!-- <script src="weather.js"></script>  -->
 </body>
 
 </html>
