@@ -1,18 +1,10 @@
-nav ul a,
-nav .brand-logo {
-  color: #444;
-}
-
+/* general html layout */
 p {
   line-height: 2rem;
 }
 
-.sidenav-trigger {
-  color: #26a69a;
-}
-
 .parallax-container {
-  min-height: 380px;
+  min-height: 300px;
   line-height: 0;
   height: auto;
   color: rgba(255,255,255,.9);
@@ -20,7 +12,156 @@ p {
   .parallax-container .section {
     width: 100%;
   }
+  
+/* header */
+.lighten-1 {
+  height: 150px;
+  background-color: #d32f2f;
+}
 
+/* icon section */
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+/* logo image */
+#logo {
+  width: 400px;
+}
+
+/* location text field */
+#location{
+  color: #ffffff;
+  font-size: 1.35rem;
+}
+
+#locationInput {
+  color: #ffffff;
+  font-size: 1.35rem;
+}
+
+.row .input-field input:focus {
+  border-bottom: 1px solid #ffffff !important;
+  box-shadow: 0 1px 0 0 #ffffff !important;
+}
+
+/* banner text */
+#firstTextBlock {
+  margin-top: 60px;
+}
+
+/* location menu */
+.select {
+  width: 100%;
+  padding: 1rem;
+  background-color: #d32f2f;
+  color:#ffffff;
+}
+
+.user-choice {
+  color: #ffffff;
+  font-size: 1rem;
+  margin-top: 5px;
+  padding: 8px;
+  background-color: #d32f2f;
+}
+
+/* map sizing */
+#map {
+  height: 500px;
+  width: 97%;
+  margin: 0 0 35px 20px;
+}
+
+/* display location selection */
+.results {
+  font-size: 1rem;
+} 
+
+.dropdown-trigger{
+  width: 35%;
+}
+
+.dropdown-content li>a, .dropdown-content li>span {
+  padding:0;
+}
+
+.collapsible {
+  margin: 0px 20px 0 0;
+  
+}
+
+.collapsible-body {
+  padding: 10px;
+  color: #ffffff;
+  background-color: #d32f2f;
+}
+
+hr {
+  border-color: #ffffff;
+  width: 70%;
+}
+
+/* location selection pop up */
+.toast {
+  background-color: #ffffff;
+  color: #000000;
+  font-weight: 450;
+  border: 2px solid #d32f2f;
+}
+
+/* undo button */
+#undo-button {
+  padding: 14.5px;
+  margin-left: 2px;
+  border: 1px;
+  width: 98%;
+  text-align: left;
+}
+
+button:focus {
+  background-color: #ffffff;
+}
+
+/* map link button */
+#route-link {
+  display: none;
+  padding: 14.5px;
+  border-top: 1.2px solid #EDEDED;
+}
+
+#open-route-link {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+#open-route-link:hover {
+  color: #ffffff;
+}
+
+#map-it:hover {
+  color: #ffffff;
+}
+
+.underline-on-hover:hover {
+  text-decoration: underline;
+}
+
+/* weather display */
+#weatherInfo {
+  margin: 0px 20px 0 0;
+}
+
+/* footer */
+footer.page-footer {
+  margin: 0;
+  border-top: .5px solid grey;
+}
+
+/* media queries */
 @media only screen and (max-width : 992px) {
   .parallax-container .section {
     position: absolute;
@@ -37,143 +178,33 @@ p {
   }
 }
 
-.icon-block {
-  padding: 0 15px;
-}
-.icon-block .material-icons {
-  font-size: inherit;
-}
+@media screen and (max-width: 900px) {
+  #map {
+    height: 400px;
+    margin: 0 0 50px 8px;
+  }
 
-.toMap {
-    font-size: 1.5rem;
-    margin-top: 25px;
-    border-bottom: .5px solid #ffffff;
-    padding: 7px;
-    position: relative;
-    top: 40px;
-}
+  .collapsible {
+    margin: 0 7px 0 7px;
+  }
 
-#location{
-  color: #ffffff;
-  font-size: 1.35rem;
+  #weatherInfo {
+    margin: 0 7px 0 7px;
+  }
 }
 
-#locationInput {
-  color: #ffffff;
-  font-size: 1.35rem;
-}
+@media screen and (max-width: 480px) {
+  #map {
+    height: 300px;
+    margin: auto;
+    margin-bottom: 50px;
+  }
 
-.row .input-field input:focus {
-  border-bottom: 1px solid #ffffff !important;
-  box-shadow: 0 1px 0 0 #ffffff !important;
-}
+  .collapsible {
+    margin: 0 2px 0 2px;
+  }
 
-.dropdown-trigger{
-  width: 35%;
-}
-
-.select {
-  width: 100%;
-  padding: 1rem;
-  background-color: #d32f2f;
-  color:#ffffff;
-}
-
-.dropdown-content li>a, .dropdown-content li>span {
-  padding:0;
-}
-
-.user-choice {
-  color: #ffffff;
-  font-size: 1rem;
-  margin-top: 5px;
-  padding: 8px;
-  background-color: #d32f2f;
-}
-
-#map {
-  height: 500px;
-  width: 97%;
-  margin-left: 20px;
-  margin-bottom: 35px;
-}
-
-.results {
-  font-size: 1rem;
-} 
-
-.collapsible {
-  margin-top: 0px;
-  margin-right: 20px;
-  
-}
-
-.collapsible-body {
-  padding: 10px;
-  color: #ffffff;
-  background-color: #d32f2f;
-}
-
-hr {
-  border-color: #ffffff;
-  width: 70%;
-}
-
-.toast {
-  background-color: #ffffff;
-  color: #000000;
-  font-weight: 450;
-  border: 2px solid #d32f2f;
-}
-
-#undo-button {
-  padding: 14.5px;
-  margin-left: 2px;
-  border: 1px;
-  width: 98%;
-  text-align: left;
-}
-
-button:focus {
-  background-color: #ffffff;
-}
-
-#open-route-link {
-  color: black;
-}
-
-#route-link {
-  padding: 14.5px;
-  border-top: 1.2px solid #EDEDED;
-
-}
-
-#route-link :hover {
-  color: #d32f2f;
-}
-
-footer.page-footer {
-  margin: 0;
-  border-top: .5px solid grey;
-}
-
-#route-link {
-  display: none;
-}
-
-#open-route-link {
-  color: white;
-  font-weight: bold;
-}
-
-#open-route-link:hover {
-  color: white;
-}
-
-#map-it:hover {
-  color: white;
-}
-
-.underline-on-hover:hover {
-  text-decoration: underline;
+  #weatherInfo {
+    margin: 0 2px 0 2px;
+  }
 }
