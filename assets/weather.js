@@ -20,10 +20,10 @@ function updateWeather() {
         };
 
         var html = 
-            `<center>Current weather in ${weatherData.name}:<br>` +
+            `<center>Current weather in <strong>${weatherData.name}</strong>:<br>` +
             `<p>Temp: ${weatherData.temp}°F | Humidity: ${weatherData.humidity}</p>` +
-            `${weatherData.description}<br>` +
-            `<img src="${weatherData.icon}"></center>`
+            `<em>${weatherData.description}</em><br>` +
+            `<img style= "width: 35%;" src="${weatherData.icon}"></center>`
 
         weatherInfoDiv.html(html);
     });
