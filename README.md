@@ -1,4 +1,4 @@
-# Project1
+# Where2
 
 ## Names
 Eddy Yousef
@@ -12,5 +12,5 @@ Miles Benovic
 Jared Walker
 
 ## Link
-https://adnanyousef.github.io/Project1
+https://adnanyousef.github.io/Where2
 

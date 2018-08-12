@@ -21,35 +21,24 @@
 
 <body>
 
-    <!-- <nav class="N/A transparent" role="navigation">
-        <div class="nav-wrapper container">
-            <a id="logo-container" href="#" class="brand-logo black-text">Team 3</a>
-            <ul class="right hide-on-med-and-down">
-                <li>
-                    <a href="#" class="black-text">Navbar Link</a>
-                </li>
-            </ul>
+    <div class="header-fixed">
+        <nav class="lighten-1">
+                <div class="row center">
+                        <img src="title2.png" id="logo" class="center" alt="titleLogo">
+                </div>
+        </nav>
+    </div>
+    <br>
+    <br>
 
-            <ul id="nav-mobile" class="sidenav">
-                <li>
-                    <a href="#">Navbar Link</a>
-                </li>
-            </ul>
-            <a href="#" data-target="nav-mobile" class="sidenav-trigger">
-                <i class="material-icons">menu</i>
-            </a>
-        </div>
-    </nav> -->
 
     <div id="index-banner" class="parallax-container">
-        <div class="section no-pad-bot">
+        <div class="section no-pad-bot" id="firstTextBlock">
 
-            <div class="container">
-                <br>
-                <br>
-                <h1 class="header center white-text">Where2 </h1>
+            <div class="container center">
+                
                 <div class="row center">
-                    <h5 class="header col s12">Discover and expore what lies between you and your destination</h5>
+                    <h5 class="header col s12">Discover and expore what lies between you and where you're going</h5>
                 </div>
 
                 <div class="row">
@@ -73,12 +62,12 @@
             </div>
         </div>
         <div class="parallax">
-            <img src="background7.jpg" alt="Unsplashed background img 1">
+            <img src="background8.png" alt="Unsplashed background img 1">
         </div>
     </div>
 
     <div class="container">
-        <div class="section">
+        <div class="section no-pad-bot no-pad-top">
 
             <!--   Icon Section   -->
             <div class="row">
@@ -199,36 +188,59 @@
 
     <div class="wrapper">
         <div class="row">
-            <div class="col s9">
+            <div class="col s12 m9">
                 <div id="map" class="z-depth-2"></div>
             </div>
-            <div class="col s3">
-                <ul class="collapsible z-depth-1">
+            <div class="col s12 m3">
+                <ul class="collapsible">
                     <li>
-                        <div class="collapsible-header"><strong>First Destination</strong></div>
-                        <div class="collapsible-body"><span><div id="saved-stuff1"></div></span></div>
+                        <div class="collapsible-header">
+                            <strong>First Destination</strong>
+                        </div>
+                        <div class="collapsible-body">
+                            <span>
+                                <div id="saved-stuff1"></div>
+                            </span>
+                        </div>
                     </li>
                     <li>
-                        <div class="collapsible-header"><strong>Second Destination</strong></div>
-                        <div class="collapsible-body"><span><div id="saved-stuff2"></div></span></div>
+                        <div class="collapsible-header">
+                            <strong>Second Destination</strong>
+                        </div>
+                        <div class="collapsible-body">
+                            <span>
+                                <div id="saved-stuff2"></div>
+                            </span>
+                        </div>
                     </li>
                     <li>
-                        <div class="collapsible-header"><strong>Third Destination</strong></div>
-                        <div class="collapsible-body"><span><div id="saved-stuff3"></div></span></div>
+                        <div class="collapsible-header">
+                            <strong>Third Destination</strong>
+                        </div>
+                        <div class="collapsible-body">
+                            <span>
+                                <div id="saved-stuff3"></div>
+                            </span>
+                        </div>
                     </li>
                     <li>
                         <div id="undo" style="text-align: left; margin-left: auto; margin-right: auto;"></div>
                     </li>
-                    <li id="mapButtons">
-                        <button id="car" style="font-size:24px"><i class="material-icons">directions_car</i></button>
-                        <button id="transit" style="font-size:24px"><i class="material-icons">directions_transit</i></button>
-                        <button id="walk" style="font-size:24px"><i class="material-icons">directions_walk</i></button>
-                        <button id="bike" style="font-size:24px"><i class="material-icons">directions_bike</i></button>
+                    <li class="collapsible-body" id="route-link">
+                        <a href="#" target="_blank" id="open-route-link">
+                            <i class="fas fa-route"></i>
+                            <span class="underline-on-hover" id="map-it"> Map It!</span>
+                        </a>
                     </li>
-                    <li id="route-link">
-                        <a href="#" target="_blank" id="open-route-link">Map It!</a>
-                    </li>
-                  </ul>                
+                </ul>
+                <br>
+                <br>
+
+                <div class="card-panel white z-depth-1" id="weatherInfo">
+                    <span class="black-text">
+                        weather info here
+                    </span>
+                </div>
             </div>
         </div>
     </div>
@@ -236,7 +248,7 @@
     <footer class="page-footer black">
         <div class="footer">
             <div class="container center-align">
-                <a class="brown-text text-lighten-3" href="#">Contact Us</a>
+                <a class="brown-text text-lighten-3" href="https://github.com/adnanyousef/Project1" target="_blank">Contact Us</a>
             </div>
         </div>
     </footer>
@@ -247,7 +259,7 @@
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeXMSNP-ICspqucRDK8pgiJlNInjVJmio&libraries=places"></script>
 
     <!-- Firebase Reference -->
-    <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script> -->
 
     <!-- JQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -257,6 +269,7 @@
 
     <!--Javascript-->
     <script src="app.js"></script>
+    <script src="weather.js"></script> 
 </body>
 
 </html>

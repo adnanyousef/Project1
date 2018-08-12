@@ -228,11 +228,11 @@ return marker;
 };
 
 function clearResults(markers) {
-for (var m in markers) {
-markers[m].setMap(null);
-}
-markers = [];
-}
+  for (var m in markers) {
+    markers[m].setMap(null);
+  };
+  markers = [];
+};
 
 google.maps.event.addDomListener(window, 'load', function () {
 initialize(userSelection);
@@ -240,33 +240,43 @@ initialize(userSelection);
 
 //alert selection was made
 function alertToast() {
-M.toast({html: 'Destination Selected'})
+  if (index === 1) {
+    var dest = "First";
+  } else if (index === 2) {
+    var dest = "Second";
+  } else if (index === 3) {
+    var dest = "Third";
+  } else {
+    var dest = "Next";
+  };
+  M.toast({html: dest + ' Destination Selected'})
 }
 
 // Choose next waypoint
 function nextWaypoint() {
+  
+  if (index === 0) {
+    // addressArray[0] = address;
+    getAttributes();
+    $("#saved-stuff1").attr("class", "results").append(name + "<br>" + "<hr align='left'>" + address + "<br>");
+    console.log("Chose first destination: " + nameArray[index]);
+  } else if (index === 1) {
+    // addressArray[1] = address;
+    getAttributes();
+    $("#saved-stuff2").attr("class", "results").append(name + "<br>" + "<hr align='left'>" + address + "<br>");
+    console.log("Chose second destination: " + nameArray[index]);
+  } else if (index === 2) {
+    // addressArray[2] = address;
+    getAttributes();
+    $("#saved-stuff3").attr("class", "results").append(name + "<br>" + "<hr align='left'>" + address + "<br>");
+    console.log("Chose third destination: " + nameArray[index]);
+    $("#route-link").fadeIn("slow");
+    runRoute();
+  };
+  index++;
 
-if (index === 0) {
-  // addressArray[0] = address;
-  getAttributes();
-  $("#saved-stuff1").attr("class", "results").append(name + "<br>" + "<hr align='left'>" + address + "<br>");
-  console.log("Chose first destination: " + nameArray[index]);
-} else if (index === 1) {
-  // addressArray[1] = address;
-  getAttributes();
-  $("#saved-stuff2").attr("class", "results").append(name + "<br>" + "<hr align='left'>" + address + "<br>");
-  console.log("Chose second destination: " + nameArray[index]);
-} else if (index === 2) {
-  // addressArray[2] = address;
-  getAttributes();
-  $("#saved-stuff3").attr("class", "results").append(name + "<br>" + "<hr align='left'>" + address + "<br>");
-  console.log("Chose third destination: " + nameArray[index]);
-  runRoute();
-};
-index++;
-
-var newUndoButton = $(`<button id='undo-button' number='${index}'><i class="fas fa-undo-alt"></i>   Undo</button>`);
-$("#undo").html(newUndoButton);
+  var newUndoButton = $(`<button id='undo-button' number='${index}'><i class="fas fa-undo-alt"></i>   <span class="underline-on-hover">Undo</span></button>`);
+  $("#undo").html(newUndoButton);
 };
 
 
