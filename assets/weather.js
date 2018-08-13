@@ -31,7 +31,15 @@ function updateWeather() {
 
 updateWeather();
 
-$(document).on("click", "#searchButton", function() {
+// On click search, update weather to user input location
+$(document).on("click", "#searchButton", function(event) {
+    event.preventDefault();
+    console.log("Updating weather for new location " + lat + ", " + lng);
+    updateWeather();
+});
+
+// On click autocomplete suggestion, update weather to user selection
+google.maps.event.addListener(autocomplete, 'place_changed', function() {
     console.log("Updating weather for new location " + lat + ", " + lng);
     updateWeather();
 });
