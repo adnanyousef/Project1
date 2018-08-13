@@ -137,6 +137,15 @@ function callback(results, status) {
 };
 
 function createMarker(place) {
+  // Test if a photo not in Google's database, use generic icon
+  if (place.photos == undefined) {
+    photo = place.icon;
+  } else {
+    photo = place.photos[0].getUrl({
+      'maxWidth': 300,
+      'maxHeight': 300
+    });
+  };
   var placeLoc = place.geometry.location;
   var marker = new google.maps.Marker({
     map: map,
@@ -188,16 +197,6 @@ function createMarker(place) {
       rating = `<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>`;
     } else {
       rating = "N/A";
-    };
-
-    // Test if a photo not in Google's database, use generic icon
-    if (place.photos == undefined) {
-      photo = place.icon;
-    } else {
-      photo = place.photos[0].getUrl({
-        'maxWidth': 300,
-        'maxHeight': 300
-      });
     };
 
     // Set button text
@@ -332,7 +331,8 @@ $(document).on('click', '#undo-button', function(event) {
 });
 
 // On click search, update map with user input
-$(document).on("click", "#searchButton", function() {
+$(document).on("click", "#searchButton", function(event) {
+  event.preventDefault();
   var autocompletePlace = autocomplete.getPlace();
   lat = autocompletePlace.geometry.location.lat();
   lng = autocompletePlace.geometry.location.lng();
