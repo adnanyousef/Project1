@@ -31,6 +31,12 @@ $(document).ready(function () {
   $('.collapsible').collapsible();
 });
 
+//-----feature action------
+$(document).ready(function(){
+  $('.tap-target').tapTarget();
+});
+   
+
 
 var userSelection = "restaurant";
 
