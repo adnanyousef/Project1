@@ -4,7 +4,7 @@ p {
 }
 
 .parallax-container {
-  min-height: 445px;
+  min-height: 435px;
   line-height: 0;
   height: auto;
   color: rgba(255,255,255,.9);
@@ -204,6 +204,7 @@ footer.page-footer {
 @media screen and (max-width: 480px) {
   #firstTextBlock {
     margin-top: 0px;
+    padding-top: 0px;
   }
 
   #map {

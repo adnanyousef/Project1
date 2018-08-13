@@ -69,6 +69,10 @@ var index = 0;
 
 var radius = 8047 // in meters
 
+
+var x = window.matchMedia("(max-width: 700px)");
+var defineHtml;
+
 // Get current location
 if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(function (position) {
@@ -211,13 +215,22 @@ function createMarker(place) {
       var stop = "Next";
     };
 
-    var html =
-      `<center><div style="overflow: auto;"><strong style="font-size: 1.5rem;">${name}</strong><br><hr>` +
-      `${address}<br>` +
-      `Price: ${price}<br>` +
-      `Rating: ${rating}<br>` +
-      `<img style="width: 50%"src="${photo}"><br>` +
-      `<button class="user-choice" onclick='nextWaypoint(); alertToast()'>Select ${stop} Stop</button></div></center>`;
+    defineHtml = function(x) {
+      if (x.matches) { // If media query matches
+          return `<center><div style="overflow: auto;"><strong style="font-size: 1.5rem;">${name}</strong><br><hr>` +
+          `${address}<br>` +
+          `<button class="user-choice" onclick='nextWaypoint(); alertToast()'>Select ${stop} Stop</button></div></center>`;
+      } else {
+          return `<center><div style="overflow: auto;"><strong style="font-size: 1.5rem;">${name}</strong><br><hr>` +
+          `${address}<br>` +
+          `Price: ${price}<br>` +
+          `Rating: ${rating}<br>` +
+          `<img style="width: 50%"src="${photo}"><br>` +
+          `<button class="user-choice" onclick='nextWaypoint(); alertToast()'>Select ${stop} Stop</button></div></center>`;
+      }
+    }
+
+    var html = defineHtml(x);
     
     infowindow.setContent(html);
 
@@ -226,6 +239,9 @@ function createMarker(place) {
   });
   return marker;
 };
+
+
+
 
 function clearResults(markers) {
   for (var m in markers) {
@@ -331,3 +347,4 @@ $(document).on('click', '#undo-button', function(event) {
   $("#undo-button").attr("number", index);
 });
 
+x.addListener(defineHtml); // Attach listener function on state changes
