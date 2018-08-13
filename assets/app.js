@@ -36,6 +36,14 @@ $(document).ready(function(){
   $('.tap-target').tapTarget();
 });
    
+//----feature discovery-----
+$(document).ready(function () {
+  $('.tap-target').tapTarget()
+
+  $('#open').on('click', function () {
+    $('.tap-target').tapTarget('open', 'close')
+  });
+});
 
 
 var userSelection = "restaurant";
