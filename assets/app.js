@@ -1,34 +1,33 @@
 //---layout display--- 
-(function($){
-    $(function(){
-  
-      $('.sidenav').sidenav();
-      $('.parallax').parallax();
-  
-    }); 
-  })(jQuery); 
+(function ($) {
+  $(function () {
 
-  //------drop down selection--------
-  $(".dropdown-trigger").dropdown();
+    $('.sidenav').sidenav();
+    $('.parallax').parallax();
 
-
-  //--------search scroll animation-------
-  $(document).ready(function(){
-    $("#searchButton").on('click', function(event) {
-        event.preventDefault()
-        var hash = this.hash;
-
-        if($(hash).offset()) {
-          $('html, body').animate({
-            scrollTop: $(hash).offset().top
-          }, 800, function(){
-          });
-        };
-    });
   });
+})(jQuery);
+
+//------drop down selection--------
+$(".dropdown-trigger").dropdown();
+
+
+//--------search scroll animation-------
+$(document).ready(function () {
+  $("#searchButton").on('click', function (event) {
+    event.preventDefault()
+    var hash = this.hash;
+
+    if ($(hash).offset()) {
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function () {});
+    };
+  });
+});
 
 //-------collapsible-------
-$(document).ready(function(){
+$(document).ready(function () {
   $('.collapsible').collapsible();
 });
 
@@ -137,15 +136,6 @@ function callback(results, status) {
 };
 
 function createMarker(place) {
-  // Test if a photo not in Google's database, use generic icon
-  if (place.photos == undefined) {
-    photo = place.icon;
-  } else {
-    photo = place.photos[0].getUrl({
-      'maxWidth': 300,
-      'maxHeight': 300
-    });
-  };
   var placeLoc = place.geometry.location;
   var marker = new google.maps.Marker({
     map: map,
@@ -199,6 +189,16 @@ function createMarker(place) {
       rating = "N/A";
     };
 
+    // Test if a photo not in Google's database, use generic icon
+    if (place.photos == undefined) {
+      photo = place.icon;
+    } else {
+      photo = place.photos[0].getUrl({
+        'maxWidth': 300,
+        'maxHeight': 300
+      });
+    };
+    
     // Set button text
     if (index == 0) {
       var stop = "First";
@@ -217,7 +217,7 @@ function createMarker(place) {
       `Rating: ${rating}<br>` +
       `<img style="width: 50%"src="${photo}"><br>` +
       `<button class="user-choice" onclick='nextWaypoint(); alertToast()'>Select ${stop} Stop</button></div></center>`;
-    
+
     infowindow.setContent(html);
 
     console.log(address);
@@ -248,12 +248,14 @@ function alertToast() {
   } else {
     var dest = "Next";
   };
-  M.toast({html: dest + ' Destination Selected'})
+  M.toast({
+    html: dest + ' Destination Selected'
+  })
 }
 
 // Choose next waypoint
 function nextWaypoint() {
-  
+
   if (index === 0) {
     // addressArray[0] = address;
     getAttributes();
@@ -304,17 +306,17 @@ function runRoute() {
   var pseudostart = nameArray[0].replace(/ /g, "+") + "+" + addressArray[0].replace(/ /g, "+");
   var pseudoend = nameArray[2].replace(/ /g, "+") + "+" + addressArray[2].replace(/ /g, "+");
   var pseudowaypoint = nameArray[1].replace(/ /g, "+") + "+" + addressArray[1].replace(/ /g, "+");
-  
+
   var routeURL = "https://www.google.com/maps/dir/?api=1&" + "+Austin+TX&destination=" + pseudoend + "+Austin+TX&waypoints=" + pseudowaypoint + "%7C" + pseudostart;
-    console.log(routeURL);
-    console.log("--------")
-    document.getElementById("open-route-link").setAttribute("href", routeURL);
-    console.log($("#open-route-link"));
+  console.log(routeURL);
+  console.log("--------")
+  document.getElementById("open-route-link").setAttribute("href", routeURL);
+  console.log($("#open-route-link"));
 
 };
 
 // Undo function
-$(document).on('click', '#undo-button', function(event) {
+$(document).on('click', '#undo-button', function (event) {
   event.preventDefault();
   var number = parseInt($(this).attr('number'));
   console.log("Clicked undo button " + number);
@@ -331,7 +333,7 @@ $(document).on('click', '#undo-button', function(event) {
 });
 
 // On click search, update map with user input
-$(document).on("click", "#searchButton", function(event) {
+$(document).on("click", "#searchButton", function (event) {
   event.preventDefault();
   var autocompletePlace = autocomplete.getPlace();
   lat = autocompletePlace.geometry.location.lat();
