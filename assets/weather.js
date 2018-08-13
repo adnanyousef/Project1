@@ -30,3 +30,10 @@ function updateWeather() {
 };
 
 updateWeather();
+
+// On click search, update weather to user input location
+$(document).on("click", "#searchButton", function(event) {
+    event.preventDefault();
+    console.log("Updating weather for new location " + lat + ", " + lng);
+    updateWeather();
+});
