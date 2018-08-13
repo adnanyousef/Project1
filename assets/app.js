@@ -350,7 +350,10 @@ $(document).on("click", "#searchButton", function (event) {
 function usedSavedRoute() {
   nameArray = JSON.parse(localStorage.getItem("names"));
   addressArray = JSON.parse(localStorage.getItem("addresses"));
-  routeURL = localStorage.getItem("url");
+  var routeURL = localStorage.getItem("url");
+  $("#st-1").attr("data-url", routeURL);
+  document.getElementById("open-route-link").setAttribute("href", routeURL);
+
   for (var j = 0; j < nameArray.length; j++) {
     var text = j + 1;
     $("#saved-stuff" + text).attr("class", "results").append(nameArray[j] + "<br>" + "<hr align='left'>" + addressArray[j] + "<br>");
