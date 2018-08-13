@@ -206,7 +206,7 @@ function createMarker(place) {
         'maxHeight': 300
       });
     };
-    
+
     // Set button text
     if (index == 0) {
       var stop = "First";
@@ -278,16 +278,21 @@ function nextWaypoint() {
 
   if (index === 0) {
     // addressArray[0] = address;
+    $("#reset").remove();
+    localStorage.clear();
+    $("#saved-stuff1").html('');
     getAttributes();
     $("#saved-stuff1").attr("class", "results").append(name + "<br>" + "<hr align='left'>" + address + "<br>");
     console.log("Chose first destination: " + nameArray[index]);
   } else if (index === 1) {
     // addressArray[1] = address;
     getAttributes();
+    $("#saved-stuff2").html('');
     $("#saved-stuff2").attr("class", "results").append(name + "<br>" + "<hr align='left'>" + address + "<br>");
     console.log("Chose second destination: " + nameArray[index]);
   } else if (index === 2) {
     // addressArray[2] = address;
+    $("#saved-stuff3").html('');
     getAttributes();
     $("#saved-stuff3").attr("class", "results").append(name + "<br>" + "<hr align='left'>" + address + "<br>");
     console.log("Chose third destination: " + nameArray[index]);
@@ -328,12 +333,16 @@ function runRoute() {
   var pseudowaypoint = nameArray[1].replace(/ /g, "+") + "+" + addressArray[1].replace(/ /g, "+");
 
   var routeURL = "https://www.google.com/maps/dir/?api=1&" + "+Austin+TX&destination=" + pseudoend + "+Austin+TX&waypoints=" + pseudowaypoint + "%7C" + pseudostart;
-    console.log(routeURL);
-    console.log("--------")
-    $("#st-1").attr("data-url", routeURL);
-    document.getElementById("open-route-link").setAttribute("href", routeURL);
-    console.log($("#open-route-link"));
+  console.log(routeURL);
+  console.log("--------")
+  $("#st-1").attr("data-url", routeURL);
+  document.getElementById("open-route-link").setAttribute("href", routeURL);
+  console.log($("#open-route-link"));
 
+  // Save to local storage
+  localStorage.setItem("names", JSON.stringify(nameArray));
+  localStorage.setItem("addresses", JSON.stringify(addressArray));
+  localStorage.setItem("url", routeURL);
 };
 
 // Undo function
@@ -363,5 +372,41 @@ $(document).on("click", "#searchButton", function (event) {
   initialize(userSelection);
 });
 
+function usedSavedRoute() {
+  nameArray = JSON.parse(localStorage.getItem("names"));
+  addressArray = JSON.parse(localStorage.getItem("addresses"));
+  var routeURL = localStorage.getItem("url");
+  document.getElementById("open-route-link").setAttribute("href", routeURL);
+
+  for (var j = 0; j < nameArray.length; j++) {
+    var text = j + 1;
+    $("#saved-stuff" + text).attr("class", "results").append(nameArray[j] + "<br>" + "<hr align='left'>" + addressArray[j] + "<br>");
+  };
+};
+
+// Check local storage for save, and populate
+if (localStorage.getItem("names") !== null) {
+  console.log("Found saved data, loading...");
+  var savedURL = localStorage.getItem("url");
+
+  $("#st-1").attr("data-url", savedURL);
+  console.log("setting st-1 to " + savedURL);
+
+  usedSavedRoute();
+  $("#route-link").show();
+} else {
+  $("#reset").remove();
+};
+
+$(document).on("click", "#reset", function(event) {
+  event.preventDefault();
+  console.log("Resetting saved data");
+  localStorage.clear();
+  namesArray = [];
+  addressArray = [];
+  index = 0;
+  $("#reset").remove();
+  location.reload();
+});
 // change return html google infobox based on screen width
 x.addListener(defineHtml);

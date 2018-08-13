@@ -244,6 +244,11 @@
                             </span>
                         </div>
                     </li>
+                    <li id="reset">
+                        <div class="collapsible-header">
+                            <strong>Reset Saved Data</strong>
+                        </div>
+                    </li>
                     <li>
                         <div id="undo" style="text-align: left; margin-left: auto; margin-right: auto;"></div>
                     </li>
@@ -279,6 +284,7 @@
     <!--Autocomplete Search-->
     <script>
         var autocomplete;
+
         function activatePlaceSearch() {
             var input = document.getElementById("locationInput");
             autocomplete = new google.maps.places.Autocomplete(input);
