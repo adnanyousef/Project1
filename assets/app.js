@@ -331,3 +331,11 @@ $(document).on('click', '#undo-button', function(event) {
   $("#undo-button").attr("number", index);
 });
 
+// On click search, update map with user input
+$(document).on("click", "#searchButton", function() {
+  var autocompletePlace = autocomplete.getPlace();
+  lat = autocompletePlace.geometry.location.lat();
+  lng = autocompletePlace.geometry.location.lng();
+  console.log("Searched for " + lat + ", " + lng);
+  initialize(userSelection);
+});

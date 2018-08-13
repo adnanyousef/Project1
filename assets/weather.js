@@ -30,3 +30,8 @@ function updateWeather() {
 };
 
 updateWeather();
+
+$(document).on("click", "#searchButton", function() {
+    console.log("Updating weather for new location " + lat + ", " + lng);
+    updateWeather();
+});
