@@ -4,8 +4,8 @@ weatherInfoDiv.text("Getting local weather...");
 var apiKey = "f910817faa30cb7e21fa85cfecb50202";
 
 function updateWeather() {
-    var queryURL = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${apiKey}`;
-
+    var queryURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${apiKey}`;
+    
     $.ajax({
         url: queryURL,
         method: "GET"
