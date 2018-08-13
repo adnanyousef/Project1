@@ -4,32 +4,28 @@ p {
 }
 
 .parallax-container {
-  min-height: 300px;
+  min-height: 445px;
   line-height: 0;
   height: auto;
   color: rgba(255,255,255,.9);
 }
+
 .parallax-container .section {
   width: 100%;
 }
-  
-/* header */
-.titleRow {
-  height: 150px;
-  background-color: #d32f2f;
+
+#secondBackImg {
+  min-height: 300px;
 }
 
-/* icon section */
-.icon-block {
-  padding: 0 15px;
-}
-.icon-block .material-icons {
-  font-size: inherit;
+/* header text */
+#headerText {
+  margin-top: 25px;
 }
 
 /* logo image */
 #logo {
-  width: 400px;
+  width: 375px;
 }
 
 /* location text field */
@@ -55,7 +51,15 @@ p {
 
 /* banner text */
 #firstTextBlock {
-  margin-top: 60px;
+  margin-top: 30px;
+}
+
+/* icon section */
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
 }
 
 /* location menu */
@@ -179,6 +183,10 @@ footer.page-footer {
 }
 
 @media screen and (max-width: 900px) {
+  #firstTextBlock {
+    margin-top: 0px;
+  }
+  
   #map {
     height: 400px;
     margin: 0 0 50px 8px;
@@ -194,6 +202,10 @@ footer.page-footer {
 }
 
 @media screen and (max-width: 480px) {
+  #firstTextBlock {
+    margin-top: 0px;
+  }
+
   #map {
     height: 300px;
     margin: auto;
