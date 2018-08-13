@@ -215,7 +215,7 @@ function createMarker(place) {
       `${address}<br>` +
       `Price: ${price}<br>` +
       `Rating: ${rating}<br>` +
-      `<img style="width: 50%"src="${photo}"><br>` +
+      `<img style="width: 50%; min-height: 50%;" src="${photo}"><br>` +
       `<button class="user-choice" onclick='nextWaypoint(); alertToast()'>Select ${stop} Stop</button></div></center>`;
 
     infowindow.setContent(html);
