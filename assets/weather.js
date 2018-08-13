@@ -4,8 +4,8 @@ weatherInfoDiv.text("Getting local weather...");
 var apiKey = "f910817faa30cb7e21fa85cfecb50202";
 
 function updateWeather() {
-    var queryURL = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${apiKey}`;
-
+    var queryURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${apiKey}`;
+    
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -20,10 +20,10 @@ function updateWeather() {
         };
 
         var html = 
-            `<center>Current weather in <strong>${weatherData.name}</strong>:<br>` +
-            `<p>Temp: ${weatherData.temp}°F | Humidity: ${weatherData.humidity}</p>` +
+            `<center>Current weather in <strong>${weatherData.name}</strong>:<br><br>` +
+            `Temp: ${weatherData.temp}°F | Humidity: ${weatherData.humidity}<br>` +
             `<em>${weatherData.description}</em><br>` +
-            `<img style= "width: 38%;" src="${weatherData.icon}"></center>`
+            `<img style= "width: 30%;" src="${weatherData.icon}"></center>`
 
         weatherInfoDiv.html(html);
     });
