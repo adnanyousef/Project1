@@ -198,7 +198,7 @@ function createMarker(place) {
         'maxHeight': 300
       });
     };
-    
+
     // Set button text
     if (index == 0) {
       var stop = "First";
@@ -311,8 +311,10 @@ function runRoute() {
   console.log(routeURL);
   console.log("--------")
   document.getElementById("open-route-link").setAttribute("href", routeURL);
-  console.log($("#open-route-link"));
 
+  // Save to local storage
+  localStorage.setItem("names", JSON.stringify(nameArray));
+  localStorage.setItem("addresses", JSON.stringify(addressArray));
 };
 
 // Undo function
@@ -341,3 +343,15 @@ $(document).on("click", "#searchButton", function (event) {
   console.log("Searched for " + lat + ", " + lng);
   initialize(userSelection);
 });
+
+// Check local storage for save, and populate
+if (localStorage.getItem("names") !== null) {
+  console.log("Found saved data, loading...");
+  var nameArray = JSON.parse(localStorage.getItem("names"));
+  var addressArray = JSON.parse(localStorage.getItem("addresses"));
+
+  for (var j = 0; j < nameArray.length; j++) {
+    var text = j + 1;
+    $("#saved-stuff" + text).attr("class", "results").append(nameArray[j] + "<br>" + "<hr align='left'>" + addressArray[j] + "<br>");
+  };
+};
