@@ -305,9 +305,8 @@ function runRoute() {
   var pseudostart = nameArray[0].replace(/ /g, "+") + "+" + addressArray[0].replace(/ /g, "+");
   var pseudoend = nameArray[2].replace(/ /g, "+") + "+" + addressArray[2].replace(/ /g, "+");
   var pseudowaypoint = nameArray[1].replace(/ /g, "+") + "+" + addressArray[1].replace(/ /g, "+");
-  var url = "https://www.google.com/maps/dir/?api=1&origin=+Home+Slice+Austin+TX&destination=Thompson+Conference+Center+Austin+TX&travelmode=bicycling&waypoints=Emo's+Austin+TX";
   
-  var routeURL = "https://www.google.com/maps/dir/?api=1&origin=+" + pseudostart + "+Austin+TX&destination=" + pseudoend + "+Austin+TX&travelmode=bicycling&waypoints=" + pseudowaypoint;
+  var routeURL = "https://www.google.com/maps/dir/?api=1&" + "+Austin+TX&destination=" + pseudoend + "+Austin+TX&waypoints=" + pseudowaypoint + "%7C" + pseudostart;
     console.log(routeURL);
     console.log("--------")
     document.getElementById("open-route-link").setAttribute("href", routeURL);
