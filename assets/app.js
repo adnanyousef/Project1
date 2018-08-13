@@ -212,11 +212,11 @@ function createMarker(place) {
     };
 
     var html =
-      `<center><div style="overflow: auto;">${name}<br>` +
+      `<center><div style="overflow: auto;"><strong style="font-size: 1.5rem;">${name}</strong><br><hr>` +
       `${address}<br>` +
       `Price: ${price}<br>` +
       `Rating: ${rating}<br>` +
-      `<img src="${photo}"><br>` +
+      `<img style="width: 50%"src="${photo}"><br>` +
       `<button class="user-choice" onclick='nextWaypoint(); alertToast()'>Select ${stop} Stop</button></div></center>`;
     
     infowindow.setContent(html);

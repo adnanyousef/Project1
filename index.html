@@ -16,17 +16,17 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
         crossorigin="anonymous">
 
-    <link href="style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="assets/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
 </head>
 
 <body>
 
     <div class="header-fixed">
-        <nav class="lighten-1">
-                <div class="row center">
-                        <img src="title2.png" id="logo" class="center" alt="titleLogo">
-                </div>
-        </nav>
+        <div class="titleRow">
+            <div class="row center">
+                <img src="assets/images/title2.png" id="logo" class="center" alt="titleLogo">
+            </div>
+        </div>
     </div>
     <br>
     <br>
@@ -36,7 +36,7 @@
         <div class="section no-pad-bot" id="firstTextBlock">
 
             <div class="container center">
-                
+
                 <div class="row center">
                     <h5 class="header col s12">Discover and expore what lies between you and where you're going</h5>
                 </div>
@@ -45,11 +45,11 @@
                     <form class="col s12">
                         <div class="row">
                             <div class="col s4"></div>
-                            <div class="input-field col s3">
-                                <input id="locationInput" type="text" class="validate">
-                                <label id="location" for="textInput">Location</label>
-                            </div>
                             <div class="input-field col s4">
+                                <input id="locationInput" type="text" class="validate">
+                                <label id="location" for="textInput"></label>
+                            </div>
+                            <div class="input-field col s3 left-align" style="padding: 10px">
                                 <a href="#section2" id="searchButton" class="btn N/A transparent">search</a>
                             </div>
                         </div>
@@ -62,7 +62,7 @@
             </div>
         </div>
         <div class="parallax">
-            <img src="background8.png" alt="Unsplashed background img 1">
+            <img src="assets/images/background8.png" alt="Unsplashed background img 1">
         </div>
     </div>
 
@@ -117,7 +117,7 @@
             </div>
         </div>
         <div class="parallax">
-            <img src="background2.jpg" alt="Unsplashed background img 2">
+            <img src="assets/images/background2.jpg" alt="Unsplashed background img 2">
         </div>
     </div>
 
@@ -290,9 +290,7 @@
                 <br>
 
                 <div class="card-panel white z-depth-1" id="weatherInfo">
-                    <span class="black-text">
-                        weather info here
-                    </span>
+                    <span class="black-text"></span>
                 </div>
             </div>
         </div>
@@ -301,15 +299,24 @@
     <footer class="page-footer black">
         <div class="footer">
             <div class="container center-align">
-                <a class="brown-text text-lighten-3" href="https://github.com/adnanyousef/Project1" target="_blank">Contact Us</a>
+                <a class="brown-text text-lighten-3" href="https://github.com/adnanyousef/Where2" target="_blank">Contact Us</a>
             </div>
         </div>
     </footer>
 
 
     <!---Scripts-->
+
+    <!--Autocomplete Search-->
+    <script>
+        function activatePlaceSearch(){
+            var input = document.getElementById("locationInput");
+            var autocomplete = new google.maps.places.Autocomplete(input);
+        }
+    </script>
+
     <!-- Google Places -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeXMSNP-ICspqucRDK8pgiJlNInjVJmio&libraries=places"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeXMSNP-ICspqucRDK8pgiJlNInjVJmio&libraries=places&callback=activatePlaceSearch"></script>
 
     <!-- Firebase Reference -->
     <!-- <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script> -->
@@ -321,8 +328,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
 
     <!--Javascript-->
-    <script src="app.js"></script>
-    <script src="weather.js"></script> 
+    <script src="assets/app.js"></script>
+    <script src="assets/weather.js"></script> 
 </body>
 
 </html>
