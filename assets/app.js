@@ -31,6 +31,12 @@ $(document).ready(function () {
   $('.collapsible').collapsible();
 });
 
+//-----feature action------
+$(document).ready(function(){
+  $('.tap-target').tapTarget();
+});
+   
+
 
 var userSelection = "restaurant";
 
@@ -67,6 +73,10 @@ var numberOfWaypoints = 3;
 var index = 0;
 
 var radius = 8047 // in meters
+
+
+var x = window.matchMedia("(max-width: 800px)"); // change google infobox html media query 
+var defineHtml;
 
 // Get current location
 if (navigator.geolocation) {
@@ -124,8 +134,6 @@ function initialize(searchCategory) {
     service.nearbySearch(request, callback);
   })
 };
-
-
 
 function callback(results, status) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
@@ -210,14 +218,23 @@ function createMarker(place) {
       var stop = "Next";
     };
 
-    var html =
-      `<center><div style="overflow: auto;"><strong style="font-size: 1.5rem;">${name}</strong><br><hr>` +
-      `${address}<br>` +
-      `Price: ${price}<br>` +
-      `Rating: ${rating}<br>` +
-      `<img style="width: 50%; min-height: 50%;" src="${photo}"><br>` +
-      `<button class="user-choice" onclick='nextWaypoint(); alertToast()'>Select ${stop} Stop</button></div></center>`;
+    defineHtml = function(x) {
+      if (x.matches) { // If media query matches
+          return `<center><div style="overflow: auto;"><strong style="font-size: 1.5rem;">${name}</strong><br><hr>` +
+          `${address}<br>` +
+          `<button class="user-choice" onclick='nextWaypoint(); alertToast()'>Select ${stop} Stop</button></div></center>`;
+      } else {
+          return `<center><div style="overflow: auto;"><strong style="font-size: 1.5rem;">${name}</strong><br><hr>` +
+          `${address}<br>` +
+          `Price: ${price}<br>` +
+          `Rating: ${rating}<br>` +
+          `<img style="width: 45%"src="${photo}"><br>` +
+          `<button class="user-choice" onclick='nextWaypoint(); alertToast()'>Select ${stop} Stop</button></div></center>`;
+      }
+    }
 
+    var html = defineHtml(x);
+    
     infowindow.setContent(html);
 
     console.log(address);
@@ -225,6 +242,9 @@ function createMarker(place) {
   });
   return marker;
 };
+
+
+
 
 function clearResults(markers) {
   for (var m in markers) {
@@ -388,3 +408,5 @@ $(document).on("click", "#reset", function(event) {
   $("#reset").remove();
   location.reload();
 });
+// change return html google infobox based on screen width
+x.addListener(defineHtml);

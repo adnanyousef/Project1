@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Project 1</title>
+    <title>Where2</title>
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
 
@@ -23,22 +23,18 @@
 
 <body>
 
-    <div class="header-fixed">
-        <div class="titleRow">
-            <div class="row center">
-                <img src="assets/images/title2.png" id="logo" class="center" alt="titleLogo">
-            </div>
-        </div>
-    </div>
-    <br>
-    <br>
-
-
     <div id="index-banner" class="parallax-container">
         <div class="section no-pad-bot" id="firstTextBlock">
 
-            <div class="container center">
+            <div class="header-fixed">
+                <div class="titleRow">
+                    <div class="row center">
+                        <img src="assets/images/title2.png" id="logo" class="center" alt="titleLogo">
+                    </div>
+                </div>
+            </div>
 
+            <div class="container center" id="headerText">
                 <div class="row center">
                     <h5 class="header col s12">Discover and expore what lies between you and where you're going</h5>
                 </div>
@@ -46,12 +42,12 @@
                 <div class="row">
                     <form class="col s12">
                         <div class="row">
-                            <div class="col s4"></div>
-                            <div class="input-field col s4">
+                            <div class="col s2 m4"></div>
+                            <div class="input-field col s6 m4">
                                 <input id="locationInput" type="text" class="validate">
                                 <label id="location" for="textInput"></label>
                             </div>
-                            <div class="input-field col s3 left-align" style="padding: 10px">
+                            <div class="input-field col s4 m4 left-align" style="padding: 10px">
                                 <a href="#section2" id="searchButton" class="btn N/A transparent">search</a>
                             </div>
                         </div>
@@ -63,8 +59,8 @@
 
             </div>
         </div>
-        <div class="parallax">
-            <img src="assets/images/background8.png" alt="Unsplashed background img 1">
+        <div class="parallax" id="headerPhoto">
+            <img src="assets/images/background9.png" alt="Unsplashed background img 1">
         </div>
     </div>
 
@@ -93,9 +89,9 @@
                         </h2>
                         <h5 class="center">Plan your day</h5>
 
-                        <p class="light">Where2 offers a simple, convenient way to plan an afternoon, evening, or even your whole day. Once
-                            you've finished up those plans you can share what stops you'll hit with a text of your route
-                            to your friends.</p>
+                        <p class="light">Where2 offers a simple, convenient way to plan an afternoon, evening, or your whole day. Once you've
+                            finished up those plans you can share what stops you'll hit with a text of your route to your
+                            friends.</p>
                     </div>
                 </div>
 
@@ -106,9 +102,7 @@
                         </h2>
                         <h5 class="center">Map it</h5>
 
-                        <p class="light">After you've taken a look at what your city has to offer all that's left to do is map it. We've integrated
-                            the Google Maps app with ours so that once you're done making your plans we will automatically
-                            open the Google Maps app with the best way to travel suggested.</p>
+                        <p class="light">After you've taken a look at what your city has to offer all that's left to do is map it. We've integrated the Google Maps app with ours so that once you're done making your plans we will automatically open Google Maps with the best way to travel suggested.</p>
 
                     </div>
                 </div>
@@ -117,7 +111,7 @@
     </div>
 
 
-    <div class="parallax-container valign-wrapper">
+    <div class="parallax-container valign-wrapper" style="min-height: 280px;">
         <div class="section no-pad-bot">
             <div class="container">
                 <div class="row center">
@@ -265,7 +259,6 @@
                         </a>
                     </li>
                 </ul>
-                <br>
                 <br>
 
                 <div class="card-panel white z-depth-1" id="weatherInfo">

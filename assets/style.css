@@ -4,27 +4,23 @@ p {
 }
 
 .parallax-container {
-  min-height: 300px;
+  min-height: 435px;
   line-height: 0;
   height: auto;
   color: rgba(255,255,255,.9);
 }
+
 .parallax-container .section {
   width: 100%;
 }
-  
-/* header */
-.titleRow {
-  height: 150px;
-  background-color: #d32f2f;
+
+#secondBackImg {
+  min-height: 300px;
 }
 
-/* icon section */
-.icon-block {
-  padding: 0 15px;
-}
-.icon-block .material-icons {
-  font-size: inherit;
+/* header text */
+#headerText {
+  margin-top: 25px;
 }
 
 /* logo image */
@@ -55,7 +51,15 @@ p {
 
 /* banner text */
 #firstTextBlock {
-  margin-top: 60px;
+  margin-top: 30px;
+}
+
+/* icon section */
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
 }
 
 /* location menu */
@@ -113,9 +117,9 @@ hr {
 /* location selection pop up */
 .toast {
   background-color: #ffffff;
-  color: #000000;
+  color: #d32f2f;
   font-weight: 450;
-  border: 2px solid #d32f2f;
+  border: 1.5px solid #d32f2f;
 }
 
 /* undo button */
@@ -168,7 +172,7 @@ footer.page-footer {
 }
 
 /* media queries */
-@media only screen and (max-width : 992px) {
+@media only screen and (max-width : 990px) {
   .parallax-container .section {
     position: absolute;
     top: 40%;
@@ -176,9 +180,17 @@ footer.page-footer {
   #index-banner .section {
     top: 10%;
   }
+
+  #firstTextBlock {
+    margin-top: 0;
+  }
 }
 
 @media screen and (max-width: 900px) {
+  #firstTextBlock {
+    margin-top: 0px;
+  }
+  
   #map {
     height: 400px;
     margin: 0 0 50px 8px;
@@ -194,6 +206,15 @@ footer.page-footer {
 }
 
 @media screen and (max-width: 480px) {
+  #logo {
+    width: 350px;
+  }
+
+  #firstTextBlock {
+    margin-top: 0px;
+    padding-top: 0px;
+  }
+
   #map {
     height: 300px;
     margin: auto;
