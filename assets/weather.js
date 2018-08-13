@@ -37,9 +37,3 @@ $(document).on("click", "#searchButton", function(event) {
     console.log("Updating weather for new location " + lat + ", " + lng);
     updateWeather();
 });
-
-// On click autocomplete suggestion, update weather to user selection
-google.maps.event.addListener(autocomplete, 'place_changed', function() {
-    console.log("Updating weather for new location " + lat + ", " + lng);
-    updateWeather();
-});

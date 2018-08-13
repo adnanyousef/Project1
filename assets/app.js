@@ -339,11 +339,3 @@ $(document).on("click", "#searchButton", function(event) {
   console.log("Searched for " + lat + ", " + lng);
   initialize(userSelection);
 });
-
-// On click autocomplete suggestion, update map with user input
-google.maps.event.addListener(autocomplete, 'place_changed', function() {
-  var autocompletePlace = autocomplete.getPlace();
-  lat = autocompletePlace.geometry.location.lat();
-  lng = autocompletePlace.geometry.location.lng();
-  console.log("Searched for " + lat + ", " + lng);
-});
