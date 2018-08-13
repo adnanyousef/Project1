@@ -258,16 +258,21 @@ function nextWaypoint() {
 
   if (index === 0) {
     // addressArray[0] = address;
+    $("#reset").remove();
+    localStorage.clear();
+    $("#saved-stuff1").html('');
     getAttributes();
     $("#saved-stuff1").attr("class", "results").append(name + "<br>" + "<hr align='left'>" + address + "<br>");
     console.log("Chose first destination: " + nameArray[index]);
   } else if (index === 1) {
     // addressArray[1] = address;
     getAttributes();
+    $("#saved-stuff2").html('');
     $("#saved-stuff2").attr("class", "results").append(name + "<br>" + "<hr align='left'>" + address + "<br>");
     console.log("Chose second destination: " + nameArray[index]);
   } else if (index === 2) {
     // addressArray[2] = address;
+    $("#saved-stuff3").html('');
     getAttributes();
     $("#saved-stuff3").attr("class", "results").append(name + "<br>" + "<hr align='left'>" + address + "<br>");
     console.log("Chose third destination: " + nameArray[index]);
@@ -351,7 +356,6 @@ function usedSavedRoute() {
   nameArray = JSON.parse(localStorage.getItem("names"));
   addressArray = JSON.parse(localStorage.getItem("addresses"));
   var routeURL = localStorage.getItem("url");
-  $("#st-1").attr("data-url", routeURL);
   document.getElementById("open-route-link").setAttribute("href", routeURL);
 
   for (var j = 0; j < nameArray.length; j++) {
@@ -363,6 +367,11 @@ function usedSavedRoute() {
 // Check local storage for save, and populate
 if (localStorage.getItem("names") !== null) {
   console.log("Found saved data, loading...");
+  var savedURL = localStorage.getItem("url");
+
+  $("#st-1").attr("data-url", savedURL);
+  console.log("setting st-1 to " + savedURL);
+
   usedSavedRoute();
   $("#route-link").show();
 } else {
