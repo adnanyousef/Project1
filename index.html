@@ -274,10 +274,11 @@
 
     <!--Autocomplete Search-->
     <script>
-        function activatePlaceSearch(){
+        var autocomplete;
+        function activatePlaceSearch() {
             var input = document.getElementById("locationInput");
-            var autocomplete = new google.maps.places.Autocomplete(input);
-        }
+            autocomplete = new google.maps.places.Autocomplete(input);
+        };
     </script>
 
     <!-- Google Places -->
