@@ -382,8 +382,10 @@ if (localStorage.getItem("names") !== null) {
   console.log("Found saved data, loading...");
   var savedURL = localStorage.getItem("url");
 
-  $("#st-1").attr("data-url", savedURL);
-  console.log("setting st-1 to " + savedURL);
+  setTimeout(function() {
+    $("#st-1").attr("data-url", savedURL);
+    console.log("setting st-1 to " + savedURL);
+  }, 1000);
 
   usedSavedRoute();
   $("#route-link").show();
