@@ -308,15 +308,16 @@ function runRoute() {
   var pseudowaypoint = nameArray[1].replace(/ /g, "+") + "+" + addressArray[1].replace(/ /g, "+");
 
   var routeURL = "https://www.google.com/maps/dir/?api=1&" + "+Austin+TX&destination=" + pseudoend + "+Austin+TX&waypoints=" + pseudowaypoint + "%7C" + pseudostart;
-    console.log(routeURL);
-    console.log("--------")
-    $("#st-1").attr("data-url", routeURL);
-    document.getElementById("open-route-link").setAttribute("href", routeURL);
-    console.log($("#open-route-link"));
+  console.log(routeURL);
+  console.log("--------")
+  $("#st-1").attr("data-url", routeURL);
+  document.getElementById("open-route-link").setAttribute("href", routeURL);
+  console.log($("#open-route-link"));
 
   // Save to local storage
   localStorage.setItem("names", JSON.stringify(nameArray));
   localStorage.setItem("addresses", JSON.stringify(addressArray));
+  localStorage.setItem("url", routeURL);
 };
 
 // Undo function
@@ -346,14 +347,32 @@ $(document).on("click", "#searchButton", function (event) {
   initialize(userSelection);
 });
 
-// Check local storage for save, and populate
-if (localStorage.getItem("names") !== null) {
-  console.log("Found saved data, loading...");
-  var nameArray = JSON.parse(localStorage.getItem("names"));
-  var addressArray = JSON.parse(localStorage.getItem("addresses"));
-
+function usedSavedRoute() {
+  nameArray = JSON.parse(localStorage.getItem("names"));
+  addressArray = JSON.parse(localStorage.getItem("addresses"));
+  routeURL = localStorage.getItem("url");
   for (var j = 0; j < nameArray.length; j++) {
     var text = j + 1;
     $("#saved-stuff" + text).attr("class", "results").append(nameArray[j] + "<br>" + "<hr align='left'>" + addressArray[j] + "<br>");
   };
 };
+
+// Check local storage for save, and populate
+if (localStorage.getItem("names") !== null) {
+  console.log("Found saved data, loading...");
+  usedSavedRoute();
+  $("#route-link").show();
+} else {
+  $("#reset").remove();
+};
+
+$(document).on("click", "#reset", function(event) {
+  event.preventDefault();
+  console.log("Resetting saved data");
+  localStorage.clear();
+  namesArray = [];
+  addressArray = [];
+  index = 0;
+  $("#reset").remove();
+  location.reload();
+});
