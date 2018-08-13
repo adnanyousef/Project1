@@ -236,9 +236,6 @@ function createMarker(place) {
   return marker;
 };
 
-
-
-
 function clearResults(markers) {
   for (var m in markers) {
     markers[m].setMap(null);
@@ -387,6 +384,7 @@ if (localStorage.getItem("names") !== null) {
     console.log("setting st-1 to " + savedURL);
   }, 1000);
 
+  M.toast({html: 'Check Out Your Last Destinations Below'})
   usedSavedRoute();
   $("#route-link").show();
 } else {

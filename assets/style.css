@@ -159,6 +159,11 @@ button:focus {
   text-decoration: underline;
 }
 
+/* reset last visited */
+#reset {
+  color: #d32f2f;
+}
+
 /* share links */
 #st-1 {
   padding: 10px 0 10px 10px;
@@ -167,15 +172,31 @@ button:focus {
 /* weather display */
 #weatherInfo {
   position: relative;
-  bottom: 36px;
-  left: 18px;
+  bottom: 15px;
+  left: 20px;
+  font-size: 1.2rem
 }
+
+#menu {
+  background-color: #d32f2f;
+}
+
+.waves-effect {
+  background-color: #d32f2f;
+}
+
+.waves-effect:hover {
+  background-color: #d32f2f;
+}
+
 
 /* feature discovery weather display */
 .tap-target {
   top: 93px;
   left: 56px;
-  
+  background-color: #d32f2f;
+  color: #ffffff;
+  border: 1px solid #ffffff;
 }
 
 /* footer */
