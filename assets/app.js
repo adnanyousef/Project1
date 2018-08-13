@@ -308,10 +308,11 @@ function runRoute() {
   var pseudowaypoint = nameArray[1].replace(/ /g, "+") + "+" + addressArray[1].replace(/ /g, "+");
 
   var routeURL = "https://www.google.com/maps/dir/?api=1&" + "+Austin+TX&destination=" + pseudoend + "+Austin+TX&waypoints=" + pseudowaypoint + "%7C" + pseudostart;
-  console.log(routeURL);
-  console.log("--------")
-  document.getElementById("open-route-link").setAttribute("href", routeURL);
-  console.log($("#open-route-link"));
+    console.log(routeURL);
+    console.log("--------")
+    $("#st-1").attr("data-url", routeURL);
+    document.getElementById("open-route-link").setAttribute("href", routeURL);
+    console.log($("#open-route-link"));
 
 };
 
