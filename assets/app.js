@@ -70,7 +70,7 @@ var index = 0;
 var radius = 8047 // in meters
 
 
-var x = window.matchMedia("(max-width: 700px)");
+var x = window.matchMedia("(max-width: 800px)"); // change google infobox html media query 
 var defineHtml;
 
 // Get current location
@@ -129,8 +129,6 @@ function initialize(searchCategory) {
     service.nearbySearch(request, callback);
   })
 };
-
-
 
 function callback(results, status) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {

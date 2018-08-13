@@ -172,13 +172,17 @@ footer.page-footer {
 }
 
 /* media queries */
-@media only screen and (max-width : 992px) {
+@media only screen and (max-width : 990px) {
   .parallax-container .section {
     position: absolute;
     top: 40%;
   }
   #index-banner .section {
     top: 10%;
+  }
+
+  #firstTextBlock {
+    margin-top: 0;
   }
 }
 
