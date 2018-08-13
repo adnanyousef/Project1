@@ -159,10 +159,23 @@ button:focus {
   text-decoration: underline;
 }
 
+/* share links */
+#st-1 {
+  padding: 10px 0 10px 10px;
+}
+
 /* weather display */
 #weatherInfo {
-  margin: 0px 20px 0 0;
-  padding: 15px 0 0 0; 
+  position: relative;
+  bottom: 36px;
+  left: 18px;
+}
+
+/* feature discovery weather display */
+.tap-target {
+  top: 93px;
+  left: 56px;
+  
 }
 
 /* footer */

@@ -31,21 +31,6 @@ $(document).ready(function () {
   $('.collapsible').collapsible();
 });
 
-//-----feature action------
-$(document).ready(function(){
-  $('.tap-target').tapTarget();
-});
-   
-//----feature discovery-----
-$(document).ready(function () {
-  $('.tap-target').tapTarget()
-
-  $('#open').on('click', function () {
-    $('.tap-target').tapTarget('open', 'close')
-  });
-});
-
-
 var userSelection = "restaurant";
 
 var test = {};
@@ -416,5 +401,6 @@ $(document).on("click", "#reset", function(event) {
   $("#reset").remove();
   location.reload();
 });
+
 // change return html google infobox based on screen width
 x.addListener(defineHtml);
