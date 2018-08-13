@@ -23,7 +23,7 @@ function updateWeather() {
             `<center>Current weather in <strong>${weatherData.name}</strong>:<br>` +
             `<p>Temp: ${weatherData.temp}°F | Humidity: ${weatherData.humidity}</p>` +
             `<em>${weatherData.description}</em><br>` +
-            `<img style= "width: 35%;" src="${weatherData.icon}"></center>`
+            `<img style= "width: 38%;" src="${weatherData.icon}"></center>`
 
         weatherInfoDiv.html(html);
     });
