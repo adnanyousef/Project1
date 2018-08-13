@@ -117,9 +117,9 @@ hr {
 /* location selection pop up */
 .toast {
   background-color: #ffffff;
-  color: #000000;
+  color: #d32f2f;
   font-weight: 450;
-  border: 2px solid #d32f2f;
+  border: 1.5px solid #d32f2f;
 }
 
 /* undo button */
