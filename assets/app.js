@@ -30,6 +30,7 @@ $(document).ready(function () {
   $('.collapsible').collapsible();
 });
 
+// On click enter, no not reload page
 document.querySelector("form").addEventListener('submit', function(event){
   event.preventDefault();
 });
