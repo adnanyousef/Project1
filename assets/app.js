@@ -30,6 +30,10 @@ $(document).ready(function () {
   $('.collapsible').collapsible();
 });
 
+document.querySelector("form").addEventListener('submit', function(event){
+  event.preventDefault();
+});
+
 var userSelection = "restaurant";
 
 var test = {};
