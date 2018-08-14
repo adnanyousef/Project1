@@ -284,5 +284,9 @@ footer.page-footer {
 
   #weatherInfo {
     margin: 0 2px 0 2px;
+    bottom: 25px;
+    left: 12px;
+    font-size: .95rem;
   }
+  
 }
