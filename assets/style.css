@@ -21,6 +21,21 @@ p {
 /* header text */
 #headerText {
   margin-top: 25px;
+  color: #ffffff;
+  text-shadow:
+  -.5px -.5px 0 #000000,
+  .5px -.5px 0 #000000,
+  -.5px .5px 0 #000000,
+  .5px .5px 0 #000000;
+}
+
+#headerText2 {
+  color: #ffffff;
+  text-shadow:
+  -.5px -.5px 0 #000000,
+  .5px -.5px 0 #000000,
+  -.5px .5px 0 #000000,
+  .5px .5px 0 #000000;
 }
 
 /* logo image */
