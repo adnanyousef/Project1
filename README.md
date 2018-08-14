@@ -7,10 +7,10 @@
 - Real time GPS positioning
 - Up to three destinations for route
 - Save route and share with friends through text or social media
-- Choose type of destination from map dropdown menu
-- Weather interface for planning acording to current weather
+- Choose type of destination from map drop down menu
+- Weather interface for planning according to current weather
 
-## Technologys
+## Technologies
 - Firebase
 - Google Maps API
 - Open Weather API
@@ -19,7 +19,7 @@
 
 ## How to use
 - First enter in your current location
-- Now your local places are pinned near you on the map, choose one to three locations that you would like to visit from the drop down menu
+- Now your local places are pinned near you on the map, choose one to three locations that you would like to visit from the categories provided in the drop down menu
 - Now Map your route and share with friends using the social media plugins on the page
 
 
