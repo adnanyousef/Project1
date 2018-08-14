@@ -11,7 +11,6 @@
 //------drop down selection--------
 $(".dropdown-trigger").dropdown();
 
-
 //--------search scroll animation-------
 $(document).ready(function () {
   $("#searchButton").on('click', function (event) {
@@ -30,11 +29,6 @@ $(document).ready(function () {
 $(document).ready(function () {
   $('.collapsible').collapsible();
 });
-
-//------hide share buttons on start----- show() not implemented yet--
-$(document).ready(function(){
-  $("#shareButtons").hide();
-})
 
 var userSelection = "restaurant";
 
@@ -71,7 +65,6 @@ var numberOfWaypoints = 3;
 var index = 0;
 
 var radius = 8047 // in meters
-
 
 var x = window.matchMedia("(max-width: 800px)"); // change google infobox html media query 
 var defineHtml;
@@ -228,8 +221,8 @@ function createMarker(place) {
           `Rating: ${rating}<br>` +
           `<img style="width: 45%"src="${photo}"><br>` +
           `<button class="user-choice" onclick='nextWaypoint(); alertToast()'>Select ${stop} Stop</button></div></center>`;
-      }
-    }
+      };
+    };
 
     var html = defineHtml(x);
     
@@ -265,12 +258,11 @@ function alertToast() {
   };
   M.toast({
     html: dest + ' Destination Selected'
-  })
-}
+  });
+};
 
 // Choose next waypoint
 function nextWaypoint() {
-
   if (index === 0) {
     // addressArray[0] = address;
     $("#reset").remove();
@@ -295,11 +287,9 @@ function nextWaypoint() {
     runRoute();
   };
   index++;
-
   var newUndoButton = $(`<button id='undo-button' number='${index}'><i class="fas fa-undo-alt"></i>   <span class="underline-on-hover">Undo</span></button>`);
   $("#undo").html(newUndoButton);
 };
-
 
 function getAttributes() {
   addressArray[index] = address;
@@ -311,7 +301,6 @@ function getAttributes() {
   photosArray[index] = photo;
 };
 
-
 // Click on category buttons
 $(document).on("click", "button", function (event) {
   event.preventDefault();
@@ -320,7 +309,6 @@ $(document).on("click", "button", function (event) {
   clearResults();
   initialize(userSelection);
 });
-
 
 function runRoute() {
   var pseudostart = nameArray[0].replace(/ /g, "+") + "+" + addressArray[0].replace(/ /g, "+");

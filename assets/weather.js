@@ -15,7 +15,7 @@ function updateWeather() {
             name: response.name,
             temp: Math.floor((response.main.temp - 273.15)*1.8+32),
             description: response.weather[0].main,
-            icon: `http://openweathermap.org/img/w/${response.weather[0].icon}.png`,
+            icon: `https://openweathermap.org/img/w/${response.weather[0].icon}.png`,
             humidity: response.main.humidity,
         };
 
