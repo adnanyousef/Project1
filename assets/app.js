@@ -28,6 +28,7 @@ $(document).ready(function () {
 //-------collapsible-------
 $(document).ready(function () {
   $('.collapsible').collapsible();
+  $("#st_gdpr_iframe").remove();
 });
 
 // On click enter, no not reload page
@@ -101,6 +102,7 @@ if (navigator.geolocation) {
 };
 
 function initialize(searchCategory) {
+  $("#st_gdpr_iframe").remove();
   var center = new google.maps.LatLng(lat, lng);
   map = new google.maps.Map(document.getElementById('map'), {
     center: center,
@@ -403,3 +405,4 @@ $(document).on("click", "#reset", function(event) {
 
 // change return html google infobox based on screen width
 x.addListener(defineHtml);
+
