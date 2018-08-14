@@ -23,7 +23,7 @@
 - Now Map your route and share with friends using the social media plugins on the page
 
 
-## Names
+## Contributors
 Eddy Yousef
 
 Tommie Behrenbeck
