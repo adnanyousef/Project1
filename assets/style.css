@@ -256,6 +256,10 @@ footer.page-footer {
   #weatherInfo {
     margin: 0 7px 0 7px;
   }
+
+  #open {
+    margin-left: 8px;
+  }
 }
 
 @media screen and (max-width: 480px) {
