@@ -352,6 +352,7 @@ $(document).on("click", "#searchButton", function (event) {
   lat = autocompletePlace.geometry.location.lat();
   lng = autocompletePlace.geometry.location.lng();
   console.log("Searched for " + lat + ", " + lng);
+  $("#locationInput").val('');
   initialize(userSelection);
 });
 
