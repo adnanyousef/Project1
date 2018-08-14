@@ -30,10 +30,14 @@ p {
 
 /* location text field */
 #location{
-  color: #ffffff;
+  color: #ffffff !important;
   font-size: 1.35rem;
 }
 
+input[type="text"]::-webkit-input-placeholder {
+  color: #ffffff !important;
+}
+   
 #locationInput {
   color: #ffffff;
   font-size: 1.35rem;
@@ -47,6 +51,7 @@ p {
 /* search button */
 #searchButton {
   border: 1px solid #ffffff;
+  color: #ffffff;
 }
 
 /* banner text */
@@ -188,7 +193,6 @@ button:focus {
 .waves-effect:hover {
   background-color: #d32f2f;
 }
-
 
 /* feature discovery weather display */
 .tap-target {

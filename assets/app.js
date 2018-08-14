@@ -31,6 +31,11 @@ $(document).ready(function () {
   $('.collapsible').collapsible();
 });
 
+//------hide share buttons on start----- show() not implemented yet--
+$(document).ready(function(){
+  $("#shareButtons").hide();
+})
+
 var userSelection = "restaurant";
 
 var test = {};
