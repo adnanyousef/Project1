@@ -17,7 +17,6 @@
         crossorigin="anonymous">
 
     <link href="assets/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
-    <script src="https://platform-api.sharethis.com/js/sharethis.js#property=5b71aa6d04b9a500117b0fef&product=inline-share-buttons"></script>
 
 </head>
 
@@ -43,12 +42,12 @@
                     <form class="col s12">
                         <div class="row">
                             <div class="col s2 m4"></div>
-                            <div class="input-field col s6 m4">
-                                <input id="locationInput" type="text" class="validate">
+                            <div class="input-field col s6 m3">
+                                <input id="locationInput" type="text" placeholder="Enter Your Location" class="validate">
                                 <label id="location" for="textInput"></label>
                             </div>
-                            <div class="input-field col s4 m4 left-align" style="padding: 10px">
-                                <a href="#section2" id="searchButton" class="btn N/A transparent">search</a>
+                            <div class="input-field col s4 m5 left-align" style="padding: 10px">
+                                <a href="#section2" id="searchButton" class="waves-effect btn N/A transparent btn-flat">search</a>
                             </div>
                         </div>
                     </form>
@@ -91,7 +90,8 @@
 
                         <p class="light">Where2 offers a simple, convenient way to plan an afternoon, evening, or your whole day. Once you've
                             finished up those plans you can share what stops you'll hit with a text of your route to your
-                            friends.</p>
+                            friends.
+                        </p>
                     </div>
                 </div>
 
@@ -102,7 +102,9 @@
                         </h2>
                         <h5 class="center">Map it</h5>
 
-                        <p class="light">After you've taken a look at what your city has to offer all that's left to do is map it. We've integrated the Google Maps app with ours so that once you're done making your plans we will automatically open Google Maps with the best way to travel suggested.</p>
+                        <p class="light">After you've taken a look at what your city has to offer all that's left to do is map it. We've integrated
+                            the Google Maps app with ours so that once you're done making your plans we will automatically
+                            open Google Maps with the best way to travel suggested.</p>
 
                     </div>
                 </div>
@@ -246,7 +248,7 @@
                     </li>
                     <li id="reset">
                         <div class="collapsible-header">
-                            <strong>Reset Saved Data</strong>
+                            <strong>Reset Last Trip</strong>
                         </div>
                     </li>
                     <li>
@@ -258,55 +260,64 @@
                             <span class="underline-on-hover" id="map-it"> Map It!</span>
                         </a>
                     </li>
+                    <li id="shareButtons">
+                        <div class="sharethis-inline-share-buttons" id="put-url-here" data-url=""></div>
+                    </li>
                 </ul>
                 <br>
+                <!--weather feature discovery-->
+                <a class="btn-small n/a transparent black-text z-depth-3" id="open"><i class="material-icons right">cloud</i>Weather</a>
+            </div>
+        </div>
 
-                <div class="card-panel white z-depth-1" id="weatherInfo">
-                    <span class="black-text"></span>
+        <!--weather feature discovery-->
+        <div class="fixed-action-btn direction-top">
+            <a id="menu" class="waves-effect waves-light btn-small btn-floating"><i class="material-icons">cloud</i></a>
+        </div>
+        <div class="tap-target" data-target="menu">
+            <div class="tap-target-content">
+                <div class="weather" id="weatherInfo">
+                    <span class="weatherPlacehold"></span>
                 </div>
-                <br>
-                <div class="sharethis-inline-share-buttons" id="put-url-here" data-url=""></div>
             </div>
         </div>
-    </div>
 
-    <footer class="page-footer black">
-        <div class="footer">
-            <div class="container center-align">
-                <a class="brown-text text-lighten-3" href="https://github.com/adnanyousef/Where2" target="_blank">Contact Us</a>
+
+        <footer class="page-footer black">
+            <div class="footer">
+                <div class="container center-align">
+                    <a class="brown-text text-lighten-3" href="https://github.com/adnanyousef/Where2" target="_blank">Contact Us</a>
+                </div>
             </div>
-        </div>
-    </footer>
+        </footer>
 
 
-    <!---Scripts-->
+        <!---Scripts-->
 
-    <!--Autocomplete Search-->
-    <script>
-        var autocomplete;
+        <!--Autocomplete Search-->
+        <script>
+            var autocomplete;
 
-        function activatePlaceSearch() {
-            var input = document.getElementById("locationInput");
-            autocomplete = new google.maps.places.Autocomplete(input);
-        };
-    </script>
+            function activatePlaceSearch() {
+                var input = document.getElementById("locationInput");
+                autocomplete = new google.maps.places.Autocomplete(input);
+            };
+        </script>
 
-    <!-- Google Places -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeXMSNP-ICspqucRDK8pgiJlNInjVJmio&libraries=places&callback=activatePlaceSearch"></script>
+        <!-- Google Places -->
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeXMSNP-ICspqucRDK8pgiJlNInjVJmio&libraries=places&callback=activatePlaceSearch"></script>
 
-    <!-- Firebase Reference -->
-    <!-- <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script> -->
+        <!-- JQuery -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <!-- JQuery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
 
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+        <script src="https://platform-api.sharethis.com/js/sharethis.js#property=5b71aa6d04b9a500117b0fef&product=inline-share-buttons"></script>
 
-
-    <!--Javascript-->
-    <script src="assets/app.js"></script>
-    <script src="assets/weather.js"></script>
+        <!--Javascript-->
+        <script src="assets/app.js"></script>
+        <script src="assets/weather.js"></script>
 </body>
 
 </html>

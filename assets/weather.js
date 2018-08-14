@@ -37,3 +37,13 @@ $(document).on("click", "#searchButton", function(event) {
     console.log("Updating weather for new location " + lat + ", " + lng);
     updateWeather();
 });
+
+//----weather feature discovery-----
+$(document).ready(function () {
+    $('.tap-target').tapTarget()
+  
+    $('#open').on('click', function () {
+      $('.tap-target').tapTarget('open', 'close')
+    });
+  });
+  

@@ -31,12 +31,10 @@ $(document).ready(function () {
   $('.collapsible').collapsible();
 });
 
-//-----feature action------
+//------hide share buttons on start----- show() not implemented yet--
 $(document).ready(function(){
-  $('.tap-target').tapTarget();
-});
-   
-
+  $("#shareButtons").hide();
+})
 
 var userSelection = "restaurant";
 
@@ -243,9 +241,6 @@ function createMarker(place) {
   return marker;
 };
 
-
-
-
 function clearResults(markers) {
   for (var m in markers) {
     markers[m].setMap(null);
@@ -394,6 +389,7 @@ if (localStorage.getItem("names") !== null) {
     console.log("setting st-1 to " + savedURL);
   }, 1000);
 
+  M.toast({html: 'Check Out Your Last Destinations Below'})
   usedSavedRoute();
   $("#route-link").show();
 } else {
@@ -410,5 +406,6 @@ $(document).on("click", "#reset", function(event) {
   $("#reset").remove();
   location.reload();
 });
+
 // change return html google infobox based on screen width
 x.addListener(defineHtml);
