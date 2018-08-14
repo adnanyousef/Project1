@@ -30,6 +30,11 @@ $(document).ready(function () {
   $('.collapsible').collapsible();
 });
 
+// On click enter, no not reload page
+document.querySelector("form").addEventListener('submit', function(event){
+  event.preventDefault();
+});
+
 var userSelection = "restaurant";
 
 var test = {};
@@ -211,9 +216,9 @@ function createMarker(place) {
 
     defineHtml = function(x) {
       if (x.matches) { // If media query matches
-          return `<center><div style="overflow: auto;"><strong style="font-size: 1.5rem;">${name}</strong><br><hr>` +
+          return `<center><div style="overflow: auto;"><strong style="font-size: 1rem;">${name}</strong><br><hr>` +
           `${address}<br>` +
-          `<button class="user-choice" onclick='nextWaypoint(); alertToast()'>Select ${stop} Stop</button></div></center>`;
+          `<button class="user-choice" style="padding: 2.5px;" onclick='nextWaypoint(); alertToast()'>Select ${stop} Stop</button></div></center>`;
       } else {
           return `<center><div style="overflow: auto;"><strong style="font-size: 1.5rem;">${name}</strong><br><hr>` +
           `${address}<br>` +
@@ -352,6 +357,7 @@ $(document).on("click", "#searchButton", function (event) {
   lat = autocompletePlace.geometry.location.lat();
   lng = autocompletePlace.geometry.location.lng();
   console.log("Searched for " + lat + ", " + lng);
+  $("#locationInput").val('');
   initialize(userSelection);
 });
 
