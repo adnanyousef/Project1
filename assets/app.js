@@ -329,8 +329,11 @@ function runRoute() {
 
   // Save to local storage
   localStorage.setItem("names", JSON.stringify(nameArray));
+  localStorage.setItem("past_names", JSON.stringify(nameArray));
   localStorage.setItem("addresses", JSON.stringify(addressArray));
+  localStorage.setItem("past_addresses", JSON.stringify(addressArray));
   localStorage.setItem("url", routeURL);
+  localStorage.setItem("urls", JSON.stringify(routeURL));
 };
 
 // Undo function
