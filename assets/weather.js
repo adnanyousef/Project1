@@ -45,5 +45,5 @@ $(document).ready(function () {
     $('#open').on('click', function () {
       $('.tap-target').tapTarget('open', 'close')
     });
-  });
+});
   
