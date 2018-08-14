@@ -28,6 +28,7 @@ $(document).ready(function () {
 //-------collapsible-------
 $(document).ready(function () {
   $('.collapsible').collapsible();
+  $("#st_gdpr_iframe").remove();
 });
 
 // On click enter, no not reload page
@@ -101,6 +102,7 @@ if (navigator.geolocation) {
 };
 
 function initialize(searchCategory) {
+  $("#st_gdpr_iframe").remove();
   var center = new google.maps.LatLng(lat, lng);
   map = new google.maps.Map(document.getElementById('map'), {
     center: center,
@@ -316,11 +318,11 @@ $(document).on("click", "button", function (event) {
 });
 
 function runRoute() {
-  var pseudostart = nameArray[0].replace(/ /g, "+") + "+" + addressArray[0].replace(/ /g, "+");
+  var pseudostart = nameArray[1].replace(/ /g, "+") + "+" + addressArray[1].replace(/ /g, "+");
   var pseudoend = nameArray[2].replace(/ /g, "+") + "+" + addressArray[2].replace(/ /g, "+");
-  var pseudowaypoint = nameArray[1].replace(/ /g, "+") + "+" + addressArray[1].replace(/ /g, "+");
+  var pseudowaypoint = nameArray[0].replace(/ /g, "+") + "+" + addressArray[0].replace(/ /g, "+");
 
-  var routeURL = "https://www.google.com/maps/dir/?api=1&" + "+Austin+TX&destination=" + pseudoend + "+Austin+TX&waypoints=" + pseudowaypoint + "%7C" + pseudostart;
+  var routeURL = "https://www.google.com/maps/dir/?api=1&" + "+&destination=" + pseudoend + "+Austin+TX&waypoints=" + pseudowaypoint + "%7C" + pseudostart;
   console.log(routeURL);
   console.log("--------")
   $("#st-1").attr("data-url", routeURL);
@@ -403,3 +405,4 @@ $(document).on("click", "#reset", function(event) {
 
 // change return html google infobox based on screen width
 x.addListener(defineHtml);
+
