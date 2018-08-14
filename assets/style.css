@@ -21,6 +21,21 @@ p {
 /* header text */
 #headerText {
   margin-top: 25px;
+  color: #ffffff;
+  text-shadow:
+  -.5px -.5px 0 #000000,
+  .5px -.5px 0 #000000,
+  -.5px .5px 0 #000000,
+  .5px .5px 0 #000000;
+}
+
+#headerText2 {
+  color: #ffffff;
+  text-shadow:
+  -.5px -.5px 0 #000000,
+  .5px -.5px 0 #000000,
+  -.5px .5px 0 #000000,
+  .5px .5px 0 #000000;
 }
 
 /* logo image */
@@ -241,11 +256,19 @@ footer.page-footer {
   #weatherInfo {
     margin: 0 7px 0 7px;
   }
+
+  #open {
+    margin-left: 8px;
+  }
 }
 
 @media screen and (max-width: 480px) {
   #logo {
     width: 350px;
+  }
+
+  #locationInput {
+    font-size: 1.2rem;
   }
 
   #firstTextBlock {
@@ -265,5 +288,9 @@ footer.page-footer {
 
   #weatherInfo {
     margin: 0 2px 0 2px;
+    bottom: 25px;
+    left: 12px;
+    font-size: .95rem;
   }
+  
 }
