@@ -11,7 +11,6 @@ Where2 was designed to create a simple, easy to use method of route planning con
 - Weather interface for planning according to current weather
 
 ## Technologies
-- Firebase
 - Google Maps API
 - Open Weather API
 - Materialize Framework
