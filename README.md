@@ -1,4 +1,4 @@
-# Where2
+<img width="450" src="assets/images/title.png" alt="Where2">
 
 ## Motivation
 Where2 was designed to create a simple, easy to use method of route planning consisting of three locations restaurants, bars, movie theaters etc, near the users current or requested location. Where2 also aimed to allow users to share these planned routes with family and friends through text message or popular social media platforms.
