@@ -22,20 +22,12 @@ p {
 #headerText {
   margin-top: 25px;
   color: #ffffff;
-  text-shadow:
-  -.5px -.5px 0 #000000,
-  .5px -.5px 0 #000000,
-  -.5px .5px 0 #000000,
-  .5px .5px 0 #000000;
+  text-shadow: -.5px 0 #000000, 0 .5px #000000, .5px 0 #000000, 0 -.5px #000000 !important;
 }
 
 #headerText2 {
   color: #ffffff;
-  text-shadow:
-  -.5px -.5px 0 #000000,
-  .5px -.5px 0 #000000,
-  -.5px .5px 0 #000000,
-  .5px .5px 0 #000000;
+  text-shadow: -.5px 0 #000000, 0 .5px #000000, .5px 0 #000000, 0 -.5px #000000 !important;
 }
 
 /* logo image */
